@@ -27,60 +27,9 @@ export const Primary: Story = {
   args: {},
 };
 
-export const CommonEnabled: Story = {
+export const Default: Story = {
   args: {
-    variant: "common",
+    variant: "default",
     defaultEnable: true,
-  },
-};
-
-export const CommonNotEnabled: Story = {
-  args: {
-    variant: "common",
-    defaultEnable: false,
-  },
-};
-
-export const ContractEnabled: Story = {
-  args: {
-    variant: "contract",
-    defaultEnable: true,
-  },
-};
-
-export const ContractNotEnabled: Story = {
-  args: {
-    variant: "contract",
-    defaultEnable: false,
-  },
-};
-
-export const CommonEnabledDisabled: Story = {
-  args: {
-    defaultEnable: true,
-    disabled: true,
-  },
-};
-
-export const CommonNotEnabledDisabled: Story = {
-  args: {
-    defaultEnable: false,
-    disabled: true,
-  },
-};
-
-export const ContractEnabledDisabled: Story = {
-  args: {
-    variant: "contract",
-    defaultEnable: true,
-    disabled: true,
-  },
-};
-
-export const ContractNotEnabledDisabled: Story = {
-  args: {
-    variant: "contract",
-    defaultEnable: false,
-    disabled: true,
   },
 };

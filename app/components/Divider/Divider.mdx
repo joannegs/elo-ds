@@ -1,0 +1,99 @@
+# Divider
+
+O componente **Divider** é utilizado para criar uma separação visual entre seções de conteúdo, seguindo o padrão do design system. Ele pode incluir um texto centralizado opcional, além de personalizações de cor para se adaptar ao tema claro ou escuro.
+
+----------
+
+## Propriedades (Props)
+
+O componente **Divider** aceita as seguintes propriedades:
+
+### `bgColor`
+
+-   **Tipo:** `"light" | "dark"`
+-   **Descrição:** Define a cor de fundo (tema) do divisor.
+-   **Valores possíveis:**
+    -   `light`: Fundo claro com barra e texto apropriados para temas claros.
+    -   `dark`: Fundo escuro com barra e texto apropriados para temas escuros.
+-   **Padrão:** `"dark"`
+
+### `children`
+
+-   **Tipo:** `React.ReactNode` (opcional)
+-   **Descrição:** Texto ou conteúdo centralizado entre as barras do divisor.
+-   **Comportamento:**
+    -   Quando fornecido, o texto é renderizado entre as barras.
+    -   Se não for fornecido, as barras ocuparão igualmente a largura disponível.
+
+### Atributos HTML
+
+-   O componente aceita todos os atributos padrão de uma `div`. Exemplos incluem:
+    -   `id`: Identificador único.
+    -   `onClick`: Manipulador de evento para cliques.
+    -   `className`: Classes CSS adicionais para customização.
+
+----------
+
+## Exemplo de Uso
+
+### Divisor Simples
+
+`<Divider bgColor="dark" />` 
+
+-   Exibe um divisor horizontal simples no tema escuro.
+
+### Divisor com Texto
+
+`<Divider bgColor="light">
+  Esse é o texto que ficará no meio do divider
+</Divider>` 
+
+-   Exibe um divisor com texto centralizado no tema claro.
+
+### Personalização com Classes CSS
+
+`<Divider className="my-4" bgColor="dark">
+  Continuar
+</Divider>` 
+
+-   Adiciona margem superior e inferior ao divisor, com texto central no tema escuro.
+
+----------
+
+## Classes CSS
+
+### **Cor das Barras**
+
+As cores das barras são controladas pela propriedade `bgColor`, usando o seguinte mapeamento:
+
+-   `light`: `bg-light-surface`
+-   `dark`: `bg-dark-surface`
+
+### **Cor do Texto**
+
+A cor do texto centralizado segue o tema do divisor:
+
+-   `light`: `text-light-surface`
+-   `dark`: `text-dark-surface`
+
+### **Estilo das Barras**
+
+As barras possuem as seguintes classes padrão:
+
+-   **Espessura:** `h-[2px]`
+-   **Largura:**
+    -   Sem `children`: `w-1/2` (as barras ocupam metade da largura total).
+    -   Com `children`: `w-1/3` (as barras ocupam um terço da largura total, deixando espaço para o conteúdo centralizado).
+
+### **Texto Centralizado**
+
+-   O texto é estilizado com as classes:
+    -   `px-3`: Margem horizontal interna ao redor do texto.
+    -   `text-center`: Alinhamento central do texto.
+
+----------
+
+## Boas Práticas
+
+-   **Escolha o tema correto:** Utilize `bgColor="light"` para temas claros e `bgColor="dark"` para temas escuros, garantindo consistência visual.
+-   **Centralize conteúdo significativo:** Use `children` para adicionar texto ou ícones que indiquem a continuidade ou separação de seções.

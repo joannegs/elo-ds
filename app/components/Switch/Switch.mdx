@@ -1,0 +1,88 @@
+
+# Switch
+
+O componente **Switch** é utilizado para alternar entre dois estados (ativado/desativado) de forma visualmente intuitiva. Ele suporta variações de tema, tamanhos e estados de desabilitado.
+
+----------
+
+## Propriedades (Props)
+
+O componente **Switch** aceita as seguintes propriedades:
+
+### `defaultEnable`
+
+-   **Tipo:** `boolean` (opcional)
+-   **Descrição:** Define o estado inicial do switch.
+-   **Padrão:** `false`
+
+### `variant`
+
+-   **Tipo:** `"default" | "colorful" | "colorful-icon"`
+-   **Descrição:** Define o estilo visual do switch.
+-   **Valores possíveis:**
+    -   `default`: Estilo básico, alternância entre estados com cores neutras.
+    -   `colorful`: Alternância com cores de `success` (ativo) e `error` (desativado).
+    -   `colorful-icon`: Exibe ícones (`CheckIcon` e `XMarkIcon`) para indicar os estados.
+
+### `size`
+
+-   **Tipo:** `"small" | "default"`
+-   **Descrição:** Define o tamanho do switch.
+-   **Valores possíveis:**
+    -   `small`: Switch compacto, com dimensões reduzidas.
+    -   `default`: Tamanho padrão.
+
+### `disabled`
+
+-   **Tipo:** `boolean` (opcional)
+-   **Descrição:** Define se o switch está desabilitado. Quando `true`, impede interações.
+-   **Padrão:** `false`
+
+### `onChange`
+
+-   **Tipo:** `(enabled: boolean) => void` (opcional)
+-   **Descrição:** Callback chamado sempre que o estado do switch é alterado.
+
+### Atributos HTML
+
+-   O componente aceita todos os atributos padrão de um elemento `<button>`, incluindo:
+    -   `id`: Identificador único.
+    -   `aria-label`: Para acessibilidade.
+
+----------
+
+## Exemplo de Uso
+
+### Switch Padrão
+
+`<Switch defaultEnable={true} variant="default" />` 
+
+### Switch Colorido
+
+`<Switch
+  defaultEnable={false}
+  variant="colorful"
+  onChange={(enabled) => console.log("Novo estado:", enabled)}
+/>` 
+
+### Switch Compacto
+
+`<Switch size="small" />` 
+
+### Switch Colorido com Ícones
+
+`<Switch variant="colorful-icon" defaultEnable={true} />` 
+
+### Switch Desabilitado
+
+`<Switch disabled />` 
+
+----------
+
+## Boas Práticas
+
+-   **Use o tamanho apropriado:** Escolha `small` para áreas mais compactas e `default` para tamanhos padrão.
+-   **Variante Colorida para Feedback:** Utilize a variante `colorful` quando o estado ativo/desativo precisar de maior distinção visual.
+-   **Variante Colorida com Ícones para Contextos Visuais:** Use `colorful-icon` para contextos onde ícones visuais melhoram a compreensão do estado.
+-   **Desabilite quando necessário:** Use `disabled` para switches que não devem ser interativos, mas precisam ser exibidos.
+

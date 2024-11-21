@@ -1,45 +1,104 @@
-import { Meta, Controls, Primary, Canvas } from "@storybook/blocks";
 
-import * as Story from "./Button.stories";
+# Button
 
-<Meta of={Story} />
+O componente **Button** é utilizado para criar interações acionáveis na interface do usuário. Ele é estilizado e configurável para atender diferentes cenários e ações, seguindo as diretrizes do design system.
 
-# Botão
-
-O componente **Botão** é utilizado para criar interações acionáveis na interface do usuário, seguindo o design system padronizado. Ele pode ser estilizado e configurado para atender diferentes cenários e ações.
-
-<Primary />
-<Canvas of={Story.DangerButton} />
-<Controls />
+----------
 
 ## Propriedades (Props)
 
-O botão aceita as seguintes propriedades:
+O componente **Button** aceita as seguintes propriedades:
 
 ### `children`
-- **Tipo**: `React.ReactNode`
-- **Descrição**: O conteúdo do botão, geralmente um texto ou ícone.
-- **Exemplo**: `"Enviar"`
+
+-   **Tipo:** `React.ReactNode`
+-   **Descrição:** O conteúdo do botão, geralmente texto ou ícones.
+-   **Exemplo:** `"Enviar"` ou `<Icon name="send" />`.
+
+### `variant`
+
+-   **Tipo:** `"primary" | "secondary" | "tertiary"`
+-   **Descrição:** Define a aparência do botão.
+-   **Valores possíveis:**
+    -   `primary`: Botão com maior destaque (padrão).
+    -   `secondary`: Botão de suporte.
+    -   `tertiary`: Botão discreto, usado em ações menos importantes ou que não devem chamar tanto a atenção do usuário.
 
 ### `className`
-- **Tipo**: `string` (opcional)
-- **Descrição**: Permite adicionar classes CSS personalizadas para ajustar o estilo do botão.
+
+-   **Tipo:** `string` (opcional)
+-   **Descrição:** Permite adicionar classes CSS personalizadas para ajustar o estilo do botão.
+
+### `disabled`
+
+-   **Tipo:** `boolean` (opcional)
+-   **Descrição:** Define se o botão está desabilitado. Quando `true`, o botão não pode ser clicado e muda seu estilo para refletir o estado.
+-   **Padrão:** `false`
 
 ### Atributos HTML
-- O botão também aceita qualquer propriedade padrão do elemento `<button>` do HTML, como `onClick`, `disabled`, `type`, entre outras.
+
+-   O botão aceita todas as propriedades padrão de um elemento `<button>` no HTML, incluindo:
+    -   `onClick`: Função para manipular cliques.
+    -   `type`: Define o tipo do botão (`submit`, `button`, ou `reset`).
+    -   `id`: Identificador único.
+
+----------
 
 ## Estilização
 
-O botão vem com um estilo padrão definido por classes tailwind CSS:
-- **Cor de fundo**: `bg-[#2D5BFF]` (azul)
-- **Bordas**: `rounded-[8px]` (bordas arredondadas)
-- **Padding**: `px-[32px]` (espaçamento horizontal) e `py-[12px]` (espaçamento vertical)
-- **Cor do texto**: `text-white` (branco)
+O botão utiliza estilos padrão definidos por classes Tailwind CSS, ajustados pela propriedade `variant` e pelo estado `disabled`:
 
-Esses estilos garantem consistência visual, mas podem ser personalizados adicionando classes via a propriedade `className`.
+### **Classes por `variant`:**
 
-## Exemplos de Uso
+-   **Primary:**
+    -   Ativo: `bg-primary text-white`
+    -   Desabilitado: `bg-disabled text-disabled`
+-   **Secondary:**
+    -   Ativo: `bg-primary-50 text-primary`
+    -   Desabilitado: `bg-disabled text-disabled`
+-   **Tertiary:**
+    -   Ativo: `text-primary`
+    -   Desabilitado: `text-disabled`
 
-### Botão Padrão
-```jsx
-<Button>Enviar</Button>
+### **Estilo Geral:**
+
+-   **Bordas:** `rounded-md` (bordas levemente arredondadas).
+-   **Padding:** `px-6 py-2` (espaçamento horizontal e vertical).
+
+Essas classes garantem consistência visual, mas podem ser personalizadas adicionando mais estilos via a propriedade `className`.
+
+----------
+
+## Exemplo de Uso
+
+### Botão Primário
+
+`<Button variant="primary" onClick={() => console.log('Botão clicado!')}>
+  Enviar
+</Button>` 
+
+### Botão Secundário
+
+`<Button variant="secondary">
+  Voltar
+</Button>` 
+
+### Botão Terciário
+
+`<Button variant="tertiary" className="text-lg">
+  Saiba Mais
+</Button>` 
+
+### Botão Desabilitado
+
+`<Button variant="primary" disabled>
+  Enviar (Desabilitado)
+</Button>` 
+
+----------
+
+## Boas Práticas
+
+-   **Use o `variant` apropriado:** Escolha `primary` para ações principais, `secondary` para suportes e `tertiary` para opções menos importantes.
+-   **Gerencie o estado `disabled`:** Use o atributo `disabled` para desabilitar ações quando necessário, garantindo uma experiência de usuário clara.
+-   **Mantenha a acessibilidade:** Adicione atributos como `aria-label` ou `aria-disabled` quando necessário para melhorar a experiência em leitores de tela.

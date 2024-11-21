@@ -1,0 +1,97 @@
+# Typography
+
+O componente **Typography** é utilizado para renderizar textos no aplicativo, seguindo o padrão do design system. Ele permite definir variantes, tamanhos e estilos para atender às necessidades de exibição de texto em diferentes contextos.
+
+----------
+
+## Propriedades (Props)
+
+O componente **Typography** aceita as seguintes propriedades:
+
+### `variant`
+
+-   **Tipo**: `"primary" | "secondary" | "tertiary"`
+-   **Descrição**: Define a variante de cor do texto.
+-   **Valores possíveis**:
+    -   `primary`: Texto principal, cor primária.
+    -   `secondary`: Texto de suporte, cor secundária.
+    -   `tertiary`: Texto de menor relevância, cor terciária.
+-   **Padrão**: `"primary"`.
+
+### `size`
+
+-   **Tipo**: `"xs" | "sm" | "md" | "xl" | "title1" | "title2" | "title3"`
+-   **Descrição**: Define o tamanho do texto.
+-   **Valores possíveis**:
+    -   `xs`: Extra pequeno.
+    -   `sm`: Pequeno.
+    -   `md`: Médio.
+    -   `xl`: Extra grande.
+    -   `title1`: Título grande.
+    -   `title2`: Título médio.
+    -   `title3`: Título pequeno.
+-   **Padrão**: `"md"`.
+
+### `element`
+
+-   **Tipo**: `keyof JSX.IntrinsicElements` (opcional)
+-   **Descrição**: Especifica o elemento HTML a ser renderizado.
+-   **Valores possíveis**: Qualquer elemento HTML válido, como `p`, `span`, `h1`, `h2`, etc.
+-   **Padrão**: `"p"`.
+
+### `className`
+
+-   **Tipo**: `string` (opcional)
+-   **Descrição**: Permite adicionar classes CSS personalizadas para ajustar o estilo do componente.
+
+### `children`
+
+-   **Tipo**: `React.ReactNode`
+-   **Descrição**: O conteúdo do texto a ser renderizado.
+
+### Atributos HTML
+
+-   O componente também aceita quaisquer atributos padrão aplicáveis ao elemento HTML especificado, como `id`, `onClick`, etc.
+
+----------
+
+## Exemplo de Uso
+
+### Texto Simples
+
+`<Typography size="sm" variant="primary">
+  Este é um texto simples usando a variante primária e tamanho pequeno.
+</Typography>` 
+
+### Título
+
+`<Typography size="title1" element="h1">
+  Este é um título de nível 1.
+</Typography>` 
+
+### Personalização com Classes
+
+`<Typography className="custom-class" size="md" variant="secondary">
+  Texto personalizado com classes adicionais.
+</Typography>` 
+
+----------
+
+## Classes e Estilização
+
+As classes geradas pelo componente seguem o padrão da biblioteca `class-variance-authority` com base nas combinações de variantes e tamanhos. As classes padrão incluem:
+
+-   **Tamanhos**: `text-xs`, `text-sm`, `text-md`, `text-xl`, `text-txl`, `text-tlg`, `text-tmd`.
+-   **Cores**: `text-primary-500`, `text-primary-300`, `text-primary-100`.
+
+Use a propriedade `className` para adicionar estilos personalizados conforme necessário.
+
+## Boas Práticas
+
+-   **Escolha o tamanho correto para a hierarquia visual:** Use tamanhos maiores (`title1`, `title2`, etc.) para títulos e tamanhos menores (`xs`, `sm`) para textos auxiliares. Certifique-se de manter a consistência dentro da interface.
+    
+-   **Use variantes para reforçar a semântica:** Utilize `primary` para textos importantes, `secondary` para contextos complementares e `tertiary` para informações de menor relevância.
+    
+-   **Selecione o elemento HTML apropriado:** Ajuste a propriedade `element` para garantir que o componente corresponda à semântica do conteúdo (por exemplo, `h1` para títulos principais e `p` para parágrafos).
+
+-   **Acessibilidade:** Sempre considere contraste suficiente entre o texto e o fundo para garantir legibilidade, especialmente para variantes como `tertiary`.

@@ -19,7 +19,7 @@
 @layer base {
   :root {
     /* Colors */
-    --success: rgb(139, 167, 128);
+    --success: rgb(55, 138, 42);
     --error: rgb(151, 46, 63);
     --alert: rgb(240, 216, 185);
     --light-surface: rgb(235, 236, 237);
