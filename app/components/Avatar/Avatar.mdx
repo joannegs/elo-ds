@@ -1,0 +1,60 @@
+# Avatar
+
+O componente **Avatar** é utilizado para exibir uma representação visual de um usuário ou entidade. Ele pode incluir uma imagem, um ícone de substituição e informações adicionais como nome e descrição, seguindo o padrão do design system.
+
+## Exemplos no Storybook
+
+### Tamanhos
+- **Pequeno (xs)**: Representado pelo exemplo `AvatarSmall`.
+- **Médio (md)**: Representado pelo exemplo `AvatarMedium`.
+- **Grande (lg)**: Representado pelo exemplo `AvatarLarge`.
+
+### Com Imagem
+- Exibe um avatar com uma imagem externa no exemplo `AvatarImage`.
+
+### Somente Nome
+- Apenas o nome é exibido sem a descrição, centralizado.
+
+---
+
+## Propriedades (Props)
+
+O componente Avatar aceita as seguintes propriedades:
+
+### `size`
+- **Tipo**: `"xs" | "sm" | "md" | "lg"`
+- **Descrição**: Define o tamanho do avatar.
+- **Valores possíveis**:
+  - `xs`: Pequeno (`w-5 h-5`).
+  - `sm`: Pequeno-médio (`w-6 h-6`).
+  - `md`: Médio (`w-8 h-8`).
+  - `lg`: Grande (`w-9 h-9`).
+
+### `image`
+- **Tipo**: `string` (opcional)
+- **Descrição**: URL para a imagem do avatar.
+- **Comportamento**: Quando fornecido, a imagem será exibida dentro do avatar.
+
+### `descricao`
+- **Tipo**: `string` (opcional)
+- **Descrição**: Texto alternativo (atributo `alt`) para a imagem.
+
+### `avatarName`
+- **Tipo**: `string` (opcional)
+- **Descrição**: Nome do usuário ou entidade.
+- **Comportamento**:
+  - Renderizado ao lado do avatar.
+  - Necessário para exibir `avatarDescription`.
+
+### `avatarDescription`
+- **Tipo**: `string` (opcional)
+- **Descrição**: Descrição adicional do avatar.
+- **Comportamento**:
+  - Renderizado apenas se `avatarName` estiver presente.
+
+### `className`
+- **Tipo**: `string` (opcional)
+- **Descrição**: Permite adicionar classes CSS personalizadas para ajustar o estilo do componente.
+
+### Atributos HTML
+- O componente também aceita quaisquer atributos padrão de uma `div`, como `onClick`, `id`, etc.

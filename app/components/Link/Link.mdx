@@ -1,0 +1,59 @@
+import { Meta, Controls, Primary, Canvas } from "@storybook/blocks";
+import * as Story from "./Link.stories";
+
+<Meta of={Story} />
+
+# Link
+
+O componente **Link** é utilizado para navegação e redirecionamento dentro da aplicação ou para recursos externos. Ele segue o design system, oferecendo acessibilidade e flexibilidade através de opções de personalização.
+
+<Primary />
+<Canvas of={Story.SuccessLink} />
+<Controls />
+
+---
+
+## Propriedades (Props)
+
+O componente **Link** aceita as seguintes propriedades:
+
+### `children`
+- **Tipo**: `React.ReactNode`
+- **Descrição**: O conteúdo dentro do link, geralmente texto ou um ícone.
+- **Exemplo**: `"Saiba Mais"`
+
+### `href`
+- **Tipo**: `string`
+- **Descrição**: A URL para onde o link deve redirecionar ao ser clicado. Este valor é ignorado se o link estiver desabilitado.
+- **Exemplo**: `"/sobre"`
+
+### `disabled`
+- **Tipo**: `boolean` (opcional)
+- **Descrição**: Marca o link como desabilitado, removendo sua funcionalidade.
+- **Padrão**: `false`
+
+### `className`
+- **Tipo**: `string` (opcional)
+- **Descrição**: Permite adicionar classes CSS personalizadas para ajustar o estilo do link.
+
+### Atributos HTML
+O componente também aceita qualquer propriedade padrão do elemento `<a>` do HTML, como `target`, `rel`, entre outros.
+
+---
+
+## Estilização
+
+O link vem com estilos padrão definidos usando classes Tailwind CSS:
+- **Cor do texto**: `text-primary` (primário)
+- **Estado desabilitado**: `aria-disabled:text-disabled` (cor de texto desabilitado)
+
+Esses estilos garantem consistência visual e acessibilidade, mas podem ser personalizados usando a propriedade `className`.
+
+---
+
+## Exemplos de Uso
+
+### Link Padrão
+
+```jsx
+<Link href="/sobre">Saiba Mais</Link>

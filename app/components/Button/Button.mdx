@@ -1,0 +1,45 @@
+import { Meta, Controls, Primary, Canvas } from "@storybook/blocks";
+
+import * as Story from "./Button.stories";
+
+<Meta of={Story} />
+
+# Botão
+
+O componente **Botão** é utilizado para criar interações acionáveis na interface do usuário, seguindo o design system padronizado. Ele pode ser estilizado e configurado para atender diferentes cenários e ações.
+
+<Primary />
+<Canvas of={Story.DangerButton} />
+<Controls />
+
+## Propriedades (Props)
+
+O botão aceita as seguintes propriedades:
+
+### `children`
+- **Tipo**: `React.ReactNode`
+- **Descrição**: O conteúdo do botão, geralmente um texto ou ícone.
+- **Exemplo**: `"Enviar"`
+
+### `className`
+- **Tipo**: `string` (opcional)
+- **Descrição**: Permite adicionar classes CSS personalizadas para ajustar o estilo do botão.
+
+### Atributos HTML
+- O botão também aceita qualquer propriedade padrão do elemento `<button>` do HTML, como `onClick`, `disabled`, `type`, entre outras.
+
+## Estilização
+
+O botão vem com um estilo padrão definido por classes tailwind CSS:
+- **Cor de fundo**: `bg-[#2D5BFF]` (azul)
+- **Bordas**: `rounded-[8px]` (bordas arredondadas)
+- **Padding**: `px-[32px]` (espaçamento horizontal) e `py-[12px]` (espaçamento vertical)
+- **Cor do texto**: `text-white` (branco)
+
+Esses estilos garantem consistência visual, mas podem ser personalizados adicionando classes via a propriedade `className`.
+
+## Exemplos de Uso
+
+### Botão Padrão
+```jsx
+<Button>Enviar</Button>
