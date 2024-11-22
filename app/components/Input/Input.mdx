@@ -1,0 +1,128 @@
+
+# Input
+
+O componente **Input** é utilizado para capturar dados do usuário, oferecendo suporte a campos de texto padrão e áreas de texto multiline (textarea). Ele é flexível e estilizado, com suporte para rótulos, estados desabilitados e placeholders.
+
+----------
+
+## Propriedades (Props)
+
+O componente **Input** aceita as seguintes propriedades:
+
+### `label`
+
+-   **Tipo:** `string` (opcional)
+-   **Descrição:** O texto exibido como rótulo acima do campo de entrada.
+-   **Exemplo:** `"Nome Completo"`
+
+### `multiline`
+
+-   **Tipo:** `boolean` (opcional)
+-   **Descrição:** Define se o campo deve ser renderizado como um textarea.
+-   **Padrão:** `false`
+
+### `placeholder`
+
+-   **Tipo:** `string` (opcional)
+-   **Descrição:** Texto exibido como dica dentro do campo de entrada antes do preenchimento.
+-   **Exemplo:** `"Digite seu nome..."`
+
+### `className`
+
+-   **Tipo:** `string` (opcional)
+-   **Descrição:** Permite adicionar classes CSS personalizadas ao campo de entrada.
+
+### `disabled`
+
+-   **Tipo:** `boolean` (opcional)
+-   **Descrição:** Define se o campo está desabilitado.
+-   **Padrão:** `false`
+
+### `onChange`
+
+-   **Tipo:** `(event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void` (opcional)
+-   **Descrição:** Callback chamado sempre que o valor do campo muda.
+-   **Exemplo:**
+    
+    `const handleChange = (event) => {
+      console.log(event.target.value);
+    };` 
+    
+
+### Outros Atributos HTML
+
+-   O componente aceita todas as propriedades padrão de:
+    -   `<input>` para campos de texto.
+    -   `<textarea>` para áreas de texto.
+
+----------
+
+### Personalização com `className`
+
+Adicione classes CSS personalizadas usando a propriedade `className`.
+
+Exemplo:
+
+`<Input className="border-2 border-red-500" placeholder="Campo com borda personalizada" />` 
+
+----------
+
+## Exemplo de Uso
+
+### Input Simples
+
+`<Input placeholder="Digite seu nome" />` 
+
+### Input com Rótulo
+
+`<Input label="Nome Completo" placeholder="Digite seu nome" />` 
+
+### Textarea Multiline
+
+`<Input multiline placeholder="Digite sua mensagem" />` 
+
+### Input Desabilitado
+
+
+`<Input label="Desabilitado" disabled placeholder="Não editável" />` 
+
+### Capturando o Valor do Input
+
+Use a propriedade `onChange` para capturar o valor do campo conforme o usuário digita.
+
+```
+const FormComponent = () => {
+  const [value, setValue] = useState("");
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setValue(event.target.value);
+    console.log(event.target.value);
+  };
+
+  return (
+    <Input
+      label="Nome"
+      placeholder="Digite seu nome"
+      value={value}
+      onChange={handleChange}
+    />
+  );
+};
+```
+
+----------
+
+## Boas Práticas
+
+1.  **Use rótulos (`label`) para melhor acessibilidade:**
+    
+    -   Adicionar rótulos ajuda os leitores de tela a identificar o campo.
+2.  **Sempre forneça um `placeholder`:**
+    
+    -   Dicas claras dentro do campo melhoram a experiência do usuário.
+3.  **Evite dependências externas para capturar valores:**
+    
+    -   Use o evento `onChange` diretamente para gerenciar o estado.
+4.  **Considere o uso de estados desabilitados:**
+    
+    -   Use `disabled` para campos que não devem ser editáveis, mas precisam ser exibidos.

@@ -85,7 +85,6 @@ const config: Config = {
       },
       textColor: {
         disabled: 'var(--text-disabled)',
-        
       },
       boxShadow: {
         sm: 'var(--shadow-sm)',
@@ -103,6 +102,16 @@ const config: Config = {
         sm: 'var(--border-radius-sm)',
         md: 'var(--border-radius-md)',
         lg: 'var(--border-radius-lg)',
+      },
+      borderColor: {
+        light: 'var(--primary-50)',
+        dark: 'var(--primary-500)',
+      },
+      borderWidth: {
+        1: '1px',
+      },
+      borderStyle: {
+        solid: 'solid',
       },
     },
   },

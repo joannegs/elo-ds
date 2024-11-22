@@ -1,0 +1,68 @@
+# Box
+
+O componente **Box** é um contêiner flexível que pode ser usado para agrupar outros elementos. Ele suporta várias propriedades para personalização, incluindo borda, sombra, padding e radius.
+
+----------
+
+## Propriedades (Props)
+
+O componente **Box** aceita as seguintes propriedades:
+
+### `border`
+
+-   **Tipo:** `boolean` (opcional)
+-   **Descrição:** Define se o Box terá borda ou não.
+-   **Padrão:** `false`
+
+### `type`
+
+-   **Tipo:** `"light" | "medium" | "dark"`
+-   **Descrição:** Define o tipo de fundo do Box.
+-   **Valores possíveis:**
+    -   `light`: Fundo claro.
+    -   `medium`: Fundo acinzentado.
+    -   `dark`: Fundo escuro.
+
+### `shadow`
+
+-   **Tipo:** `"sm" | "md" | "lg"`
+-   **Descrição:** Define o nível de sombra do Box.
+-   **Valores possíveis:**
+    -   `sm`: Sombra leve.
+    -   `md`: Sombra média.
+    -   `lg`: Sombra forte.
+
+### `children`
+
+-   **Tipo:** `React.ReactNode`
+-   **Descrição:** Conteúdo a ser exibido dentro do Box.
+-   **Padrão:** `undefined`
+
+### Atributos HTML
+
+-   O componente aceita todos os atributos padrão de um elemento `<div>`, incluindo:
+    -   `id`: Identificador único.
+    -   `className`: Classes CSS adicionais.
+
+----------
+
+## Exemplo de Uso
+
+### Box Padrão
+
+`<Box>This is a primary box</Box>`
+
+### Box com Sombra Média
+
+`<Box type="dark" shadow="md">This is a default box</Box>`
+
+### Box sem Borda
+
+`<Box border=false>This box has no border</Box>`
+
+----------
+
+## Boas Práticas
+
+-   **Use o tipo apropriado:** Escolha `light` para fundos claros e `dark` para fundos escuros.
+-   **Variante de Sombra para Destaque:** Utilize sombras para destacar o Box.
