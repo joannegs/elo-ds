@@ -1,0 +1,100 @@
+# Dialog
+
+O componente **Dialog** é utilizado para exibir caixas de diálogo modais na interface do usuário. Ele é configurável para atender diferentes cenários e ações, seguindo as diretrizes do design system.
+
+----------
+
+## Propriedades (Props)
+
+O componente **Dialog** aceita as seguintes propriedades:
+
+### `title`
+
+-   **Tipo:** `string`
+-   **Descrição:** O título do diálogo.
+-   **Exemplo:** `"Confirmação"`
+
+### `description`
+
+-   **Tipo:** `string` (opcional)
+-   **Descrição:** A descrição do diálogo.
+-   **Exemplo:** `"Tem certeza que deseja continuar?"`
+
+### `onClose`
+
+-   **Tipo:** `() => void`
+-   **Descrição:** Função chamada quando o diálogo é fechado.
+-   **Exemplo:** `() => setOpen(false)`
+
+### `actions`
+
+-   **Tipo:** `Array<{ text: string; variant?: 'primary' | 'secondary' | 'tertiary' | 'error' | 'success' | 'alert'; onClick: () => void; }>` (opcional)
+-   **Descrição:** Lista de ações (botões) a serem exibidas no diálogo.
+-   **Exemplo:** `[{ text: "Confirmar", variant: "primary", onClick: handleConfirm }]`
+
+### `children`
+
+-   **Tipo:** `React.ReactNode` (opcional)
+-   **Descrição:** Conteúdo adicional a ser exibido no diálogo.
+-   **Exemplo:** `<p>Conteúdo adicional</p>`
+
+### Atributos HTML
+
+-   O diálogo aceita todas as propriedades padrão de um elemento `<div>` no HTML, incluindo:
+    -   `id`: Identificador único.
+
+----------
+
+As classes podem ser personalizadas adicionando mais estilos via a propriedade `className`.
+
+----------
+
+## Exemplo de Uso
+
+### Diálogo de Confirmação
+
+```tsx
+<Dialog
+  title="Confirmação"
+  description="Tem certeza que deseja continuar?"
+  onClose={() => setOpen(false)}
+  actions={[
+    { text: "Cancelar", variant: "secondary", onClick: () => setOpen(false) },
+    { text: "Confirmar", variant: "primary", onClick: handleConfirm },
+  ]}
+>
+  <p>Conteúdo adicional</p>
+</Dialog>
+```
+
+### Diálogo de Erro
+
+```tsx
+<Dialog
+  title="Erro"
+  description="Ocorreu um erro ao processar sua solicitação."
+  onClose={() => setOpen(false)}
+  actions={[
+    { text: "Fechar", variant: "error", onClick: () => setOpen(false) },
+  ]}
+/>
+```
+
+### Diálogo de Sucesso
+
+```tsx
+<Dialog
+  title="Sucesso"
+  description="Sua operação foi concluída com sucesso."
+  onClose={() => setOpen(false)}
+  actions={[
+    { text: "OK", variant: "success", onClick: () => setOpen(false) },
+  ]}
+/>
+```
+
+## Boas Práticas
+-   **Use o `title` apropriado**: Escolha títulos que descrevam claramente o propósito do diálogo.
+-   **Gerencie o estado `onClose`**: Use a função onClose para controlar o fechamento do diálogo, garantindo uma experiência de usuário clara.
+-   **Adicione `actions` relevantes**: Inclua botões de ação que permitam ao usuário tomar decisões claras e diretas.
+-   **Mantenha a acessibilidade**: Adicione atributos como aria-label ou aria-describedby quando necessário para melhorar a experiência em leitores de tela.

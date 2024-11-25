@@ -21,7 +21,7 @@
     /* Colors */
     --success: rgb(55, 138, 42);
     --error: rgb(151, 46, 63);
-    --alert: rgb(240, 216, 185);
+    --alert: rgb(255, 193, 7);
     --light-surface: rgb(235, 236, 237);
     --medium-surface: rgb(192, 193, 197);
     --dark-surface: rgb(40, 42, 50);
@@ -33,7 +33,8 @@
     --primary-75: rgb(176, 208, 229); /* V75 */
     --primary-100: rgb(140, 184, 215); /* A100 */
     --primary-200: rgb(106, 156, 193); /* P100 */
-    --primary-300: rgb(59, 107, 143); /* A300 */
+    --primary-300: rgb(80, 132, 168); /* V200 */
+    --primary-400: rgb(59, 107, 143); /* A300 */
     --primary-500: rgb(35, 58, 91); /* P500 */
 
     --hover: rgb(106, 156, 193); /* P100 */

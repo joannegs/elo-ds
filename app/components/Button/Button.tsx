@@ -1,6 +1,6 @@
 export type ButtonProps = {
   children: React.ReactNode;
-  variant?: 'primary' | 'secondary' | 'tertiary';
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'error' | 'success' | 'alert';
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 function getVariant(
@@ -11,8 +11,14 @@ function getVariant(
       return disabled ? 'bg-disabled text-disabled' : 'bg-primary text-white';
     case 'secondary': 
       return disabled ? 'bg-disabled text-disabled' : 'bg-primary-50 text-primary';
-    case 'tertiary': 
+    case 'tertiary':
       return disabled ? 'text-disabled' : 'text-primary';
+    case 'error':
+      return disabled ? 'bg-disabled text-disabled' : 'bg-error text-white';
+    case 'alert':
+      return disabled ? 'bg-disabled text-disabled' : 'bg-alert text-black';
+    case 'success':
+      return disabled ? 'bg-disabled text-disabled' : 'bg-success text-white';
     default: 
       return disabled ? '' : '';
   }

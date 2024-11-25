@@ -1,0 +1,91 @@
+# Badge
+
+O componente **Badge** é utilizado para exibir pequenas etiquetas de informação. Ele é estilizado e configurável para atender diferentes cenários e necessidades.
+
+----------
+
+## Propriedades (Props)
+
+O componente **Badge** aceita as seguintes propriedades:
+
+### `color`
+
+-   **Tipo:** `string`
+-   **Descrição:** Define a cor de fundo do badge.
+-   **Exemplo:** `"primary"`, `"success"`, `"error"`
+
+### `textColor`
+
+-   **Tipo:** `string`
+-   **Descrição:** Define a cor do texto do badge.
+-   **Exemplo:** `"white"`, `"black"`, `"gray"`
+
+### `tagContent`
+
+-   **Tipo:** `string`
+-   **Descrição:** O conteúdo do badge, geralmente texto.
+-   **Exemplo:** `"Novo"`, `"Promoção"`
+
+### `borderColor`
+
+-   **Tipo:** `"light" | "dark"`
+-   **Descrição:** Define a cor da borda do badge.
+-   **Valores possíveis:**
+    -   `light`: Borda clara.
+    -   `dark`: Borda escura.
+
+### `shadow`
+
+-   **Tipo:** `boolean`
+-   **Descrição:** Define se o badge terá sombra.
+-   **Padrão:** `false`
+
+### `size`
+
+-   **Tipo:** `"big" | "small"`
+-   **Descrição:** Define o tamanho do badge.
+-   **Valores possíveis:**
+    -   `big`: Badge maior.
+    -   `small`: Badge menor (padrão).
+
+### `className`
+
+-   **Tipo:** `string` (opcional)
+-   **Descrição:** Permite adicionar classes CSS personalizadas para ajustar o estilo do badge.
+
+### Atributos HTML
+
+-   O badge aceita todas as propriedades padrão de um elemento `<div>` no HTML, incluindo:
+    -   `id`: Identificador único.
+
+----------
+
+## Exemplo de Uso
+
+### Badge Primário
+
+`<Badge color="primary" textColor="white" tagContent="Novo" />`
+
+### Badge de Sucesso
+
+`<Badge color="success" textColor="white" tagContent="Sucesso" />`
+
+### Badge de Erro
+
+`<Badge color="error" textColor="white" tagContent="Erro" />`
+
+### Badge com Sombra
+
+`<Badge color="primary" textColor="white" shadow tagContent="Com Sombra" />`
+
+### Badge Grande
+
+`<Badge color="primary" textColor="white" size="big" tagContent="Grande" />`
+
+----------
+
+## Boas Práticas
+
+-   **Use a `color` apropriada:** Escolha cores que correspondam ao contexto do badge, como `primary` para informações principais, `success` para confirmações e `error` para alertas.
+-   **Gerencie o estado `shadow`:** Use a propriedade `shadow` para adicionar profundidade visual ao badge quando necessário.
+-   **Mantenha a acessibilidade:** Adicione atributos como `aria-label` quando necessário para melhorar a experiência em leitores de tela.

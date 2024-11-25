@@ -21,7 +21,7 @@ const boxShadowClassMap = {
 };
 
 const Box = ({
-  border = false,
+  border = true,
   type = "light",
   shadow,
   children,
