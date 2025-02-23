@@ -28,4 +28,4 @@ const Input = ({ label, className, ...rest}: InputProps) => {
   </div>
 }
 
-export default Input
+export default Input;

@@ -9,12 +9,7 @@ const meta: Meta<BadgeProps> = {
       control: { type: "text" },
     },
     textColor: {
-      control: { type: "select" },
-      options: ["white", "black", "gray", "red", "blue"],
-    },
-    borderColor: {
-      control: { type: "select" },
-      options: ["light", "dark"],
+      control: { type: "text" },
     },
     shadow: {
       control: { type: "boolean" },
@@ -31,10 +26,10 @@ type Story = StoryObj<BadgeProps>;
 
 export const Primary: Story = {
   args: {
-    color: "primary-300",
-    textColor: "white",
-    borderColor: "light",
-    shadow: true,
+    color: "primary",
+    textColor: "light-surface",
+    shadow: false,
+    size: "big",
     tagContent: "Primary Badge",
   },
 };

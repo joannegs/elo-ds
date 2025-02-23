@@ -5,15 +5,13 @@ export type BadgeProps = {
   color: string;
   textColor: string;
   tagContent: string;
-  borderColor: "light" | "dark";
   shadow: boolean;
   size: "big" | "small";
 } & React.HTMLAttributes<HTMLDivElement>;
 
 const Badge = ({
   color = "primary",
-  textColor = "white",
-  borderColor,
+  textColor = "text-title",
   shadow,
   tagContent,
   className,
@@ -24,7 +22,6 @@ const Badge = ({
   const badgeClasses = classNames(
     `bg-${color}`,
     `text-${textColor}`,
-    borderColor ? `border-${borderColor} border-1 border-solid` : "",
     "rounded-md",
     "px-2",
     size === "big" ? "py-1" : "py-0.5",

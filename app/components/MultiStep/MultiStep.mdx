@@ -1,0 +1,79 @@
+
+# MultiStep
+
+O componente **MultiStep** é utilizado para exibir um progresso em múltiplas etapas, seja em formato de barra ou pontos. Ele é personalizável em termos de aparência e tamanho, tornando-se ideal para fluxos de trabalho em etapas.
+
+----------
+
+## Propriedades (Props)
+
+O componente **MultiStep** aceita as seguintes propriedades:
+
+### `size`
+
+-   **Tipo:** `number` (obrigatório)
+-   **Descrição:** Define o número total de etapas no indicador de progresso.
+
+### `currentStep`
+
+-   **Tipo:** `number` (opcional)
+-   **Descrição:** Define a etapa atual no indicador de progresso.
+-   **Padrão:** `1`
+
+### `variant`
+
+-   **Tipo:** `"bar" | "dot"` (opcional)
+-   **Descrição:** Define o estilo visual do indicador de progresso.
+-   **Valores possíveis:**
+    -   `bar`: Indicador de progresso em forma de barra contínua.
+    -   `dot`: Indicador de progresso em forma de pontos.
+-   **Padrão:** `bar`
+
+### `className`
+
+-   **Tipo:** `string` (opcional)
+-   **Descrição:** Permite adicionar classes CSS personalizadas para estilização adicional.
+
+### Atributos HTML
+
+-   O componente aceita todos os atributos padrão de um elemento `<div>`, como:
+    -   `id`: Identificador único.
+    -   `aria-label`: Para acessibilidade.
+
+----------
+
+## Exemplo de Uso
+
+### Indicador de Progresso em Barra
+
+```jsx
+<MultiStep size={5} currentStep={3} variant="bar" />
+```
+
+### Indicador de Progresso em Pontos
+
+```jsx
+<MultiStep size={4} currentStep={2} variant="dot" />
+```
+
+### Indicador de Progresso com Classes Personalizadas
+
+```jsx
+<MultiStep size={6} currentStep={4} className="custom-class" />
+```
+
+----------
+
+## Boas Práticas
+
+-   **Escolha o estilo adequado ao contexto:**
+    -   Use a variante `bar` para uma representação visual contínua do progresso.
+    -   Use a variante `dot` para uma visualização mais discreta ou minimalista.
+-   **Defina o número de etapas corretamente:** Certifique-se de que o valor da propriedade `size` corresponde ao número esperado de etapas.
+-   **Atualize dinamicamente o progresso:** Ajuste a propriedade `currentStep` para refletir o progresso em tempo real.
+-   **Estilize conforme necessário:** Utilize a propriedade `className` para personalizações específicas do projeto.
+-   **Acessibilidade:** Sempre use `aria-label` ou `aria-labelledby` para descrever o progresso em cenários onde a acessibilidade é importante.
+
+----------
+
+Componente flexível e intuitivo para exibição de progresso por etapas. Personalizável em aparência e comportamento, o **MultiStep** se adapta facilmente a diferentes fluxos de trabalho.

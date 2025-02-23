@@ -1,0 +1,84 @@
+
+# TextBox
+
+O componente **TextBox** é utilizado para exibir um bloco de texto estruturado, com título e conteúdo, de forma visualmente clara e estilizada. Ele suporta personalização de tamanho do título, estilo e classes adicionais.
+
+----------
+
+## Propriedades (Props)
+
+O componente **TextBox** aceita as seguintes propriedades:
+
+### `title`
+
+-   **Tipo:** `string` (opcional)
+-   **Descrição:** Define o título exibido na parte superior do TextBox. Se não for fornecido, apenas o conteúdo será exibido.
+
+### `titleSize`
+
+-   **Tipo:** `"xl" | "title1" | "title2" | "title3"` (obrigatório se o título estiver presente)
+-   **Descrição:** Define o tamanho do título.
+-   **Valores possíveis:**
+    -   `xl`: Tamanho extra grande.
+    -   `title1`: Tamanho de título principal.
+    -   `title2`: Tamanho de título secundário.
+    -   `title3`: Tamanho de título terciário.
+
+### `content`
+
+-   **Tipo:** `string` (obrigatório)
+-   **Descrição:** O conteúdo textual principal do TextBox.
+
+### `className`
+
+-   **Tipo:** `string` (opcional)
+-   **Descrição:** Permite adicionar classes CSS personalizadas para estilização adicional.
+
+### Atributos HTML
+
+-   O componente aceita todos os atributos padrão de um elemento `<div>`, incluindo:
+    -   `id`: Identificador único.
+    -   `aria-label`: Para acessibilidade.
+
+----------
+
+## Exemplo de Uso
+
+### TextBox Padrão
+
+```tsx
+<TextBox
+  title="Default Title"
+  titleSize="title2"
+  content="Este é o conteúdo padrão do TextBox, exibido abaixo do título."
+/>
+```
+
+### TextBox Sem Título
+
+```tsx
+<TextBox
+  content="Este é um TextBox sem título. Apenas o conteúdo é exibido."
+/>
+```
+
+### TextBox com Estilo Personalizado
+
+```tsx
+<TextBox
+  title="Custom Styled Title"
+  titleSize="title1"
+  content="Este é um TextBox com classes adicionais para personalização."
+  className="bg-blue-100 p-8 border border-blue-400"
+/>
+```
+
+----------
+
+## Boas Práticas
+
+-   **Inclua um título quando necessário:** Use a propriedade `title` e ajuste o tamanho com `titleSize` para criar hierarquia visual.
+-   **Use classes personalizadas:** Utilize a propriedade `className` para ajustar cores, margens e outros estilos conforme necessário.
+-   **Acessibilidade:** Adicione atributos como `aria-label` para tornar o componente mais acessível.
+
+----------

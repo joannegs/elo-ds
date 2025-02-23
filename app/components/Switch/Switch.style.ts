@@ -2,7 +2,6 @@ import { cva } from "class-variance-authority";
 import classNames from "classnames";
 import { SwitchProps } from "./Switch";
 
-// eslint-disable-next-line import/no-anonymous-default-export
 export default ({ variant, enabled, disabled, size = "default" }: SwitchProps) => {
   const containerVariant = cva(
     classNames(
