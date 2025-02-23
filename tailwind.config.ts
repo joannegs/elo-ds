@@ -59,6 +59,7 @@ const config: Config = {
     },
     extend: {
       colors: {
+        footer: 'var(--default-footer)',
         success: 'var(--success)',
         error: 'var(--error)',
         alert: 'var(--alert)',

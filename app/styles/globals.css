@@ -18,6 +18,9 @@
 
 @layer base {
   :root {
+    /* Specific Colors */
+    --default-footer: #972E3F;
+
     /* Colors */
     --success: rgb(55, 138, 42);
     --error: rgb(151, 46, 63);

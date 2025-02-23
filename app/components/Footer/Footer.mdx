@@ -1,0 +1,31 @@
+# Footer
+
+O componente **Footer** fornece um rodapé altamente personalizável, permitindo a inclusão de logos, conteúdos centrais e links para redes sociais.
+
+## Propriedades (Props)
+
+### `logo`
+- **Tipo:** `React.ReactNode`
+- **Descrição:** Componente ou elemento que representa o logotipo no rodapé.
+
+### `middleContent`
+- **Tipo:** `React.ReactNode`
+- **Descrição:** Elementos exibidos no centro do rodapé.
+
+### `socialLinks`
+- **Tipo:** `{ email?: string; facebook?: string; instagram?: string; }`
+- **Descrição:** URLs das redes sociais e e-mail para exibição no rodapé.
+
+## Exemplo de Uso
+
+```tsx
+<Footer 
+  logo="Logo" 
+  middleContent="Instituição & Parceiros" 
+  socialLinks={{
+    email: "mailto:example@example.com",
+    facebook: "https://facebook.com",
+    instagram: "https://instagram.com",
+  }}
+/>
+```
