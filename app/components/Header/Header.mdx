@@ -1,0 +1,41 @@
+# Header
+
+O componente **Header** fornece um cabeçalho personalizável, permitindo a inclusão de um logotipo e uma navegação.
+
+## Propriedades (Props)
+
+### `logo`
+- **Tipo:** `React.ReactNode`
+- **Descrição:** Componente ou elemento que representa o logotipo no cabeçalho.
+
+### `navigation`
+- **Tipo:** `React.ReactNode`
+- **Descrição:** Elementos de navegação exibidos no lado direito do cabeçalho.
+
+## Exemplo de Uso
+
+```tsx
+<Header 
+  logo="Logo" 
+  navigation={
+    <div className="flex gap-4">
+      <a href="#">Home</a>
+      <a href="#">Sistema</a>
+    </div>
+  }
+/>
+```
+
+### Exemplo Alternativo
+
+```tsx
+<Header 
+  logo="Logo" 
+  navigation={
+    <div className="flex gap-4">
+      <a href="#">Área 1</a>
+      <a href="#">Área 2</a>
+      <a href="#">Área 3</a>
+    </div>
+  }
+/>

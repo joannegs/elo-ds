@@ -20,6 +20,7 @@
   :root {
     /* Specific Colors */
     --default-footer: #972E3F;
+    --default-header: #FFFFFF;
 
     /* Colors */
     --success: rgb(55, 138, 42);

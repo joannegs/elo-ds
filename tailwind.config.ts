@@ -60,6 +60,7 @@ const config: Config = {
     extend: {
       colors: {
         footer: 'var(--default-footer)',
+        header: 'var(--default-header)',
         success: 'var(--success)',
         error: 'var(--error)',
         alert: 'var(--alert)',
