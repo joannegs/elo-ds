@@ -1,0 +1,35 @@
+# Checkbox
+
+O componente **Checkbox** é usado para capturar seleções múltiplas dos usuários.
+
+## Propriedades (Props)
+
+### `checked`
+- **Tipo:** `boolean`
+- **Descrição:** Define se o checkbox está marcado.
+- **Padrão:** `false`
+
+### `onChange`
+- **Tipo:** `(checked: boolean) => void`
+- **Descrição:** Callback chamado quando o estado do checkbox muda.
+
+### `label`
+- **Tipo:** `string`
+- **Descrição:** Texto opcional exibido ao lado do checkbox.
+
+## Exemplo de Uso
+
+```tsx
+<Checkbox checked={true} label="Aceito os termos" onChange={(value) => console.log(value)} />
+```
+
+## Variações
+
+### Checkbox Desmarcado
+```tsx
+<Checkbox checked={false} label="Opção 1" />
+```
+
+### Checkbox Marcado
+```tsx
+<Checkbox checked={true} label="Opção 2" />
