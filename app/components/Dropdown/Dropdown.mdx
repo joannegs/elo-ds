@@ -1,0 +1,31 @@
+# Dropdown
+
+O componente **Dropdown** permite selecionar múltiplas opções através de checkboxes.
+
+## Propriedades (Props)
+
+### `options`
+- **Tipo:** `{ label: string; value: string }[]`
+- **Descrição:** Define as opções disponíveis para seleção.
+
+### `selectedValues`
+- **Tipo:** `string[]`
+- **Descrição:** Valores atualmente selecionados.
+- **Padrão:** `[]`
+
+### `onSelectionChange`
+- **Tipo:** `(selected: string[]) => void`
+- **Descrição:** Callback chamado quando a seleção é alterada.
+
+## Exemplo de Uso
+
+```tsx
+<Dropdown 
+  options={[
+    { label: 'Opção 1', value: 'op1' },
+    { label: 'Opção 2', value: 'op2' },
+    { label: 'Opção 3', value: 'op3' }
+  ]}
+  selectedValues={["op1"]}
+  onSelectionChange={(selected) => console.log("Selecionado:", selected)}
+/>
