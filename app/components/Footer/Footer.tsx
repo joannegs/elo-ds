@@ -23,7 +23,11 @@ const Footer: React.FC<FooterProps> = ({
   return (
     <footer className={`bg-${backgroundColor} text-white py-4 px-6 flex justify-between items-center ${className}`}>
       <div className="flex items-center gap-2">{logo}</div>
-      <div className="flex items-center gap-4">{middleContent}</div>
+      <div className="flex items-center gap-4">
+        <div className="max-h-[58px]">
+          <img src="lmts-logo.png" alt="LMTS Logo" className="max-h-[58px]" />
+        </div> 
+      </div>
       <div className="flex items-center gap-4">
         {socialLinks?.email && (
           <a href={`mailto:${socialLinks.email}`} aria-label="Email">
