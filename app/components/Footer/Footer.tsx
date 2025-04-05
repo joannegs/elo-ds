@@ -16,7 +16,6 @@ export type FooterProps = {
 const Footer: React.FC<FooterProps> = ({
   backgroundColor = "footer",
   logo,
-  middleContent,
   socialLinks,
   className,
 }) => {

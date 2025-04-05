@@ -1,26 +1,41 @@
 import React, { useState } from "react";
-import Checkbox from "../Checkbox/Checkbox";
 import { ChevronDown } from "lucide-react";
+import Checkbox from "../Checkbox/Checkbox";
 
 export type DropdownProps = {
   options: { label: string; value: string }[];
   selectedValues?: string[];
   onSelectionChange?: (selected: string[]) => void;
   className?: string;
-  placeholder?: string
+  placeholder?: string;
+  multiSelect?: boolean;
 };
 
-const Dropdown: React.FC<DropdownProps> = ({ options, selectedValues = [], onSelectionChange, className, placeholder = 'Selecione' }) => {
+const Dropdown: React.FC<DropdownProps> = ({
+  options,
+  selectedValues = [],
+  onSelectionChange,
+  className,
+  placeholder = "Selecione",
+  multiSelect = true,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState<string[]>(selectedValues);
 
-  const handleToggle = (value: string) => {
-    let newSelected;
-    if (selected.includes(value)) {
-      newSelected = selected.filter((item) => item !== value);
+  const handleSelect = (value: string) => {
+    let newSelected: string[];
+
+    if (multiSelect) {
+      if (selected.includes(value)) {
+        newSelected = selected.filter((item) => item !== value);
+      } else {
+        newSelected = [...selected, value];
+      }
     } else {
-      newSelected = [...selected, value];
+      newSelected = [value];
+      setIsOpen(false);
     }
+
     setSelected(newSelected);
     onSelectionChange?.(newSelected);
   };
@@ -31,20 +46,42 @@ const Dropdown: React.FC<DropdownProps> = ({ options, selectedValues = [], onSel
         className="w-full flex items-center justify-between bg-gray-100 p-2 rounded-md shadow"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span>{selected.length > 0 ? selected.join(", ") : placeholder }</span>
+        <span className={`${selected.length ? "" : "text-gray-400"}`}>
+          {selected.length > 0
+            ? selected
+                .map(
+                  (val) => options.find((o) => o.value === val)?.label || val
+                )
+                .join(", ")
+            : placeholder}
+        </span>
         <ChevronDown className="w-4 h-4" />
       </button>
+
       {isOpen && (
-        <div className="absolute mt-2 w-full bg-white shadow-md rounded-md overflow-hidden">
-          {options.map((option) => (
-            <div key={option.value} className="p-2 hover:bg-gray-100">
-              <Checkbox
-                checked={selected.includes(option.value)}
-                onChange={() => handleToggle(option.value)}
-                label={option.label}
-              />
-            </div>
-          ))}
+        <div className="absolute mt-2 w-full max-h-60 overflow-y-auto bg-white shadow-md rounded-md z-10">
+          {options.map((option) => {
+            const isSelected = selected.includes(option.value);
+            return (
+              <div
+                key={option.value}
+                onClick={() => handleSelect(option.value)}
+                className="flex items-center p-2 cursor-pointer hover:bg-gray-100"
+              >
+                {multiSelect && (
+                  <Checkbox
+                    checked={isSelected}
+                    onChange={() => handleSelect(option.value)}
+                  />
+                )}
+                <span
+                  className={`ml-2 ${isSelected ? "text-blue-600 font-medium" : "text-black"}`}
+                >
+                  {option.label}
+                </span>
+              </div>
+            );
+          })}
         </div>
       )}
     </div>
