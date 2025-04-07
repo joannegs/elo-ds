@@ -93,9 +93,7 @@ const config: Config = {
         sm: 'var(--shadow-sm)',
         md: 'var(--shadow-md)',
         lg: 'var(--shadow-lg)',
-        focus: 'var(--shadow-focus)',
         outline: 'var(--shadow-outline)',
-        'button-focus': 'var(--shadow-button-focus)',
       },
       blur: {
         default: 'var(--blur)',
