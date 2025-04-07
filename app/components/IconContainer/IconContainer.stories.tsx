@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import IconContainer, { IconContainerProps } from "./IconContainer";
+import IconContainer from "./IconContainer";
 import * as OutlineIcons from "@heroicons/react/24/outline";
 import IconGallery from "./IconContainerGallery";
 
@@ -35,7 +35,7 @@ export const AllIcons = {
     <IconGallery
       style="outline"
       size={24}
-      color="text-blue-500"
+      color="black"
       useTokenColor={false}
     />
   ),
