@@ -1,0 +1,68 @@
+# IconContainer
+
+Componente utilizado para renderizar ícones do Heroicons com aparência consistente e personalizável.
+
+----------
+
+## Propriedades (Props)
+
+O componente **IconContainer** aceita as seguintes propriedades:
+
+### `name`
+- **Tipo:** `keyof typeof OutlineIcons` (obrigatório)
+- **Descrição:** Nome do ícone a ser renderizado.
+
+### `style`
+- **Tipo:** `"outline" | "solid"` (opcional)
+- **Descrição:** Define o estilo do ícone, contorno ou preenchido.
+- **Padrão:** `"outline"`
+
+### `size`
+- **Tipo:** `number` (opcional)
+- **Descrição:** Define o tamanho (largura e altura) do ícone em pixels.
+- **Padrão:** `12`
+
+### `color`
+- **Tipo:** `string` (opcional)
+- **Descrição:** Cor do ícone. Pode ser uma classe Tailwind (`text-blue-500`) ou um token CSS (`primary-500`).
+
+### `useTokenColor`
+- **Tipo:** `boolean` (opcional)
+- **Descrição:** Define se o valor da propriedade `color` será tratado como token CSS (`var(--token)`) ou classe Tailwind.
+- **Padrão:** `false`
+
+### `className`
+- **Tipo:** `string` (opcional)
+- **Descrição:** Permite adicionar classes CSS personalizadas.
+
+----------
+
+## Exemplos de Uso
+
+### Ícone padrão com Tailwind
+
+```jsx
+<IconContainer name="CheckIcon" size={24} color="text-green-600" />
+```
+
+### Ícone com cor vinda do design system
+
+```jsx
+<IconContainer name="CheckIcon" size={24} color="primary-500" useTokenColor />
+```
+
+### Ícone sólido com classe personalizada
+
+```jsx
+<IconContainer name="CheckIcon" style="solid" className="custom-shadow" />
+```
+
+----------
+
+## Boas Práticas
+
+- Utilize tokens CSS para manter consistência visual com o design system.
+- Prefira classes utilitárias do Tailwind para casos rápidos e contextuais.
+- Nomeie corretamente o ícone com base nos ícones disponíveis do `@heroicons/react`.
+
+----------
