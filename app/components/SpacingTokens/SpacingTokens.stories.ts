@@ -1,11 +1,11 @@
 import { Meta } from '@storybook/react';
-import ColorTokenDoc from './ColorToken.mdx';
+import SpacingTokenDoc from './SpacingTokens.mdx';
 
 export default {
-  title: 'Tokens/Color',
+  title: 'Tokens/Spacing',
   parameters: {
     docs: {
-      page: ColorTokenDoc,
+      page: SpacingTokenDoc,
     },
   },
 } as Meta;

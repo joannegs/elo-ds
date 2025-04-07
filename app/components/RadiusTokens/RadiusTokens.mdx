@@ -1,0 +1,41 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Tokens/Border Radius" />
+
+# Radius Tokens
+
+Os tokens de border-radius são usados para controlar o arredondamento dos cantos de elementos.  
+Eles seguem uma escala que permite criar desde cantos retos até formas completamente circulares.
+
+<table style={{ width: "100%", borderCollapse: "collapse" }}>
+  <thead>
+    <tr style={{ backgroundColor: "#f3f4f6", textAlign: "left" }}>
+      <th style={{ padding: "0.5rem", border: "1px solid #e5e7eb" }}>Token</th>
+      <th style={{ padding: "0.5rem", border: "1px solid #e5e7eb" }}>Classe</th>
+      <th style={{ padding: "0.5rem", border: "1px solid #e5e7eb" }}>Visual</th>
+    </tr>
+  </thead>
+  <tbody>
+    {[
+      ['--border-radius-none', 'rounded-none'],
+      ['--border-radius-sm', 'rounded-sm'],
+      ['--border-radius-md', 'rounded-md'],
+      ['--border-radius-lg', 'rounded-lg'],
+      ['--border-radius-full', 'rounded-full'],
+    ].map(([token, className]) => (
+      <tr key={token}>
+        <td style={{ padding: "0.5rem", border: "1px solid #e5e7eb", fontFamily: "monospace" }}>
+          {token}
+        </td>
+        <td style={{ padding: "0.5rem", border: "1px solid #e5e7eb" }}>
+          <code>.{className}</code>
+        </td>
+        <td style={{ padding: "0.5rem", border: "1px solid #e5e7eb" }}>
+          <div className={`bg-primary w-16 h-16 ${className}`} >
+          &nbsp; 
+        </div>
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>

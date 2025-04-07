@@ -105,6 +105,7 @@ const config: Config = {
         sm: 'var(--border-radius-sm)',
         md: 'var(--border-radius-md)',
         lg: 'var(--border-radius-lg)',
+        full: 'var(--border-radius-full)',
       },
       borderColor: {
         light: 'var(--primary-50)',

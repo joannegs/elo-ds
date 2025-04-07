@@ -1,0 +1,54 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Tokens/Spacing" />
+
+# Spacing Tokens
+
+Os tokens de espaçamento são utilizados para definir margens, preenchimentos e espaçamentos entre elementos
+(gap, padding, margin, etc). Eles seguem a escala abaixo, que facilita a consistência visual da interface.
+
+<table style={{ width: "100%", borderCollapse: "collapse" }}>
+  <thead>
+    <tr style={{ backgroundColor: "#f3f4f6", textAlign: "left" }}>
+      <th style={{ padding: "0.5rem", border: "1px solid #e5e7eb" }}>Token</th>
+      <th style={{ padding: "0.5rem", border: "1px solid #e5e7eb" }}>Valor</th>
+      <th style={{ padding: "0.5rem", border: "1px solid #e5e7eb" }}>Exemplo Visual</th>
+    </tr>
+  </thead>
+  <tbody>
+    {[
+      ['--spacing-none', '0px'],
+      ['--spacing-4xs', '8px'],
+      ['--spacing-2xs', '12px'],
+      ['--spacing-xs', '16px'],
+      ['--spacing-sm', '20px'],
+      ['--spacing-md', '24px'],
+      ['--spacing-lg', '32px'],
+      ['--spacing-xl', '40px'],
+      ['--spacing-2xl', '48px'],
+      ['--spacing-4xl', '56px'],
+      ['--spacing-6xl', '64px'],
+      ['--spacing-8xl', '72px'],
+      ['--spacing-10xl', '80px'],
+      ['--spacing-12xl', '88px'],
+      ['--spacing-14xl', '96px'],
+    ].map(([token, value]) => (
+      <tr key={token}>
+        <td style={{ padding: "0.5rem", border: "1px solid #e5e7eb", fontFamily: "monospace" }}>
+          {token}
+        </td>
+        <td style={{ padding: "0.5rem", border: "1px solid #e5e7eb" }}>{value}</td>
+        <td style={{ padding: "0.5rem", border: "1px solid #e5e7eb" }}>
+          <div className="bg-primary"
+            style={{
+              height: "20px",
+              width: value,
+              borderRadius: "4px",
+              transition: "width 0.3s",
+            }}
+          ></div>
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>
