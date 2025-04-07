@@ -1,4 +1,3 @@
-
 # Link
 
 O componente **Link** é utilizado para criar links navegáveis na interface do usuário. Ele suporta estados desabilitados e permite personalização por meio de propriedades e classes CSS.
@@ -12,8 +11,7 @@ O componente **Link** aceita as seguintes propriedades:
 ### `children`
 
 -   **Tipo:** `React.ReactNode`
--   **Descrição:** O conteúdo exibido dentro do link, geralmente texto ou ícones.
--   **Exemplo:** `"Clique aqui"` ou `<Icon name="arrow-right" />`.
+-   **Descrição:** O conteúdo exibido dentro do link, geralmente texto.
 
 ### `href`
 
@@ -28,6 +26,12 @@ O componente **Link** aceita as seguintes propriedades:
 -   **Comportamento:**
     -   Quando `true`, o link não pode ser clicado e o atributo `href` é removido.
     -   A classe `aria-disabled` é adicionada para fins de acessibilidade.
+-   **Padrão:** `false`.
+
+### `underline`
+
+-   **Tipo:** `boolean` (opcional)
+-   **Descrição:** Aplica `hover:underline` ao link, exibindo sublinhado ao passar o mouse.
 -   **Padrão:** `false`.
 
 ### `className`
@@ -47,28 +51,29 @@ O componente **Link** aceita as seguintes propriedades:
 
 ### Link Navegável
 
-
-`<Link href="https://example.com">Visite o site</Link>` 
+```tsx
+<Link href="https://example.com">Visite o site</Link>
+```
 
 ### Link Desabilitado
 
-```
+```tsx
 <Link href="https://example.com" disabled>
   Link Indisponível
-</Link>` 
+</Link>
 ```
 
-### Link Personalizado
-```
-<Link href="/dashboard" className="text-blue-500 hover:underline">
+### Link com Sublinhado ao Hover
+
+```tsx
+<Link href="/dashboard" underline>
   Ir para o Dashboard
 </Link>
 ```
+
 ----------
 
 ## Boas Práticas
 
-1.  **Indique links desabilitados:** Use a propriedade `disabled` para mostrar visualmente e funcionalmente que o link não está ativo.
 2.  **Use `aria-disabled`:** Essa propriedade garante que leitores de tela identifiquem corretamente o estado desabilitado do link.
-3.  **Estilize para contexto visual:** Adicione classes como `hover:underline` para tornar os links mais intuitivos.
 4.  **Evite `href` vazio em links ativos:** Sempre defina um valor para `href` quando o link estiver ativo.

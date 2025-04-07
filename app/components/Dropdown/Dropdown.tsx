@@ -75,7 +75,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                   />
                 )}
                 <span
-                  className={`ml-2 ${isSelected ? "text-blue-600 font-medium" : "text-black"}`}
+                  className={`ml-2 ${isSelected ? "text-primary font-medium" : "text-black"}`}
                 >
                   {option.label}
                 </span>

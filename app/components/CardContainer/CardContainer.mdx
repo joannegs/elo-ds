@@ -1,0 +1,76 @@
+
+# CardContainer
+
+O componente **CardContainer** é utilizado para agrupar e estilizar cartões de forma flexível e reutilizável.
+
+## Propriedades (Props)
+
+### `hideHover`
+- **Tipo:** `boolean`
+- **Descrição:** Define se o efeito de hover (zoom leve) deve ser ocultado.
+- **Padrão:** `true`
+
+### `shadow`
+- **Tipo:** `boolean`
+- **Descrição:** Controla se a sombra padrão será aplicada.
+- **Padrão:** `true`
+
+### `border`
+- **Tipo:** `boolean`
+- **Descrição:** Ativa ou desativa uma borda ao redor dos cartões.
+- **Padrão:** `false`
+
+### `customBackground`
+- **Tipo:** `string`
+- **Descrição:** Define a cor de fundo personalizada do cartão (ex: `#f8fafc`, `white`).
+- **Padrão:** `"white"`
+
+### `fixedDimensions`
+- **Tipo:** `{ width: number; height: number; }`
+- **Descrição:** Define largura e altura fixas para os cartões.
+
+### `className`
+- **Tipo:** `string`
+- **Descrição:** Classes Tailwind adicionais para customização do container externo.
+
+### `children`
+- **Tipo:** `React.ReactNode`
+- **Descrição:** Conteúdo interno (filhos) a serem renderizados dentro de cada cartão.
+
+## Exemplo de Uso
+
+```tsx
+<CardContainer
+  shadow
+  border
+  customBackground="#f8fafc"
+  fixedDimensions={{ width: 200, height: 150 }}
+>
+  <div>Cartão 1</div>
+  <div>Cartão 2</div>
+</CardContainer>
+```
+
+## Variações
+
+### Sem sombra, com borda e hover
+```tsx
+<CardContainer
+  shadow={false}
+  border
+  hideHover={false}
+  fixedDimensions={{ width: 180, height: 140 }}
+>
+  <div>Item A</div>
+</CardContainer>
+```
+
+### Cartões grandes com fundo personalizado
+```tsx
+<CardContainer
+  customBackground="#e2e8f0"
+  fixedDimensions={{ width: 300, height: 200 }}
+>
+  <div>Grande</div>
+</CardContainer>
+```

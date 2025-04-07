@@ -21,6 +21,7 @@
     /* Specific Colors */
     --default-footer: #972E3F;
     --default-header: #FFFFFF;
+    --input-error: #DD2153;
 
     /* Colors */
     --success: rgb(55, 138, 42);

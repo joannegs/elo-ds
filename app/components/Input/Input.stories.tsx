@@ -10,6 +10,8 @@ type InputStoryArgs = InputProps & {
   iconStartSolid?: boolean;
   iconEndName?: IconName;
   iconEndSolid?: boolean;
+  showError?: boolean;
+  errorMessage?: string;
 };
 
 const meta: Meta<InputStoryArgs> = {
@@ -36,19 +38,51 @@ const meta: Meta<InputStoryArgs> = {
       control: { type: 'radio' },
       options: [true, false],
     },
+    showError: {
+      name: 'Show Error',
+      control: { type: 'boolean' },
+    },
+    errorMessage: {
+      name: 'Error Message',
+      control: { type: 'text' },
+    },
   },
 };
 
 export default meta;
 
+const renderInput = (args: InputStoryArgs) => {
+  return (
+    <Input
+      {...args}
+      iconStart={
+        args.iconStartName
+          ? { iconName: args.iconStartName!, solid: args.iconStartSolid }
+          : undefined
+      }
+      iconEnd={
+        args.iconEndName
+          ? { iconName: args.iconEndName!, solid: args.iconEndSolid }
+          : undefined
+      }
+      error={
+        args.showError && args.errorMessage
+          ? { message: args.errorMessage }
+          : undefined
+      }
+    />
+  );
+};
+
 export const Primary: StoryObj<InputStoryArgs> = {
   args: {
     value: 'Input',
     iconStartName: undefined,
-    iconStartSolid: false,
     iconEndName: undefined,
-    iconEndSolid: false,
+    showError: false,
+    errorMessage: 'Este campo é obrigatório.',
   },
+  render: renderInput,
 };
 
 export const WithIcons: StoryObj<InputStoryArgs> = {
@@ -58,27 +92,19 @@ export const WithIcons: StoryObj<InputStoryArgs> = {
     iconStartSolid: false,
     iconEndName: 'ArrowTopRightOnSquareIcon',
     iconEndSolid: false,
+    showError: false,
   },
-  render: (args: InputStoryArgs) => (
-    <Input
-      {...args}
-      iconStart={
-        args.iconStartName
-          ? { iconName: args.iconStartName, solid: args.iconStartSolid }
-          : undefined
-      }
-      iconEnd={
-        args.iconEndName
-          ? { iconName: args.iconEndName, solid: args.iconEndSolid }
-          : undefined
-      }
-    />
-  ),
+  render: renderInput,
 };
 
-export const Disabled: StoryObj<InputProps> = {
+export const Disabled: StoryObj<InputStoryArgs> = {
   args: {
     value: 'Input',
     disabled: true,
+    iconStartName: undefined,
+    iconEndName: undefined,
+    showError: false,
+    errorMessage: '',
   },
+  render: renderInput,
 };

@@ -1,32 +1,41 @@
 import { Meta, StoryObj } from '@storybook/react';
-
 import Link, { LinkProps } from './Link';
 
-const meta: Meta<LinkProps> = {
+type LinkStoryArgs = LinkProps;
+
+const meta: Meta<LinkStoryArgs> = {
   title: 'Link',
   component: Link,
-  argTypes: {}
+  argTypes: {
+    underline: {
+      name: 'Underline',
+      control: { type: 'boolean' },
+    },
+  },
 };
 
 export default meta;
 
-export const Primary: StoryObj<LinkProps> = {
+export const Primary: StoryObj<LinkStoryArgs> = {
   args: {
     children: 'Link',
-    href: '/'
-  }
+    href: '/',
+    underline: false,
+  },
 };
 
-export const Disabled: StoryObj<LinkProps> = {
+export const Disabled: StoryObj<LinkStoryArgs> = {
   args: {
     children: 'Link',
     disabled: true,
-  }
+    underline: false,
+  },
 };
 
-export const SuccessLink:  StoryObj<LinkProps> = {
+export const SuccessLink: StoryObj<LinkStoryArgs> = {
   args: {
     children: 'Success Link',
-    className: 'theme-green'
-  }
+    className: 'theme-green',
+    underline: true,
+  },
 };

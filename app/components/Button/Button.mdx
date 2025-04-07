@@ -3,7 +3,7 @@
 
 O componente **Button** é utilizado para criar interações acionáveis na interface do usuário. Ele é estilizado e configurável para atender diferentes cenários e ações, seguindo as diretrizes do design system.
 
-----------
+---
 
 ## Propriedades (Props)
 
@@ -11,38 +11,45 @@ O componente **Button** aceita as seguintes propriedades:
 
 ### `children`
 
--   **Tipo:** `React.ReactNode`
--   **Descrição:** O conteúdo do botão, geralmente texto ou ícones.
--   **Exemplo:** `"Enviar"` ou `<Icon name="send" />`.
+- **Tipo:** `React.ReactNode`  
+- **Descrição:** O conteúdo do botão, geralmente texto ou ícones.
 
 ### `variant`
 
--   **Tipo:** `"primary" | "secondary" | "tertiary"`
--   **Descrição:** Define a aparência do botão.
--   **Valores possíveis:**
-    -   `primary`: Botão com maior destaque (padrão).
-    -   `secondary`: Botão de suporte.
-    -   `tertiary`: Botão discreto, usado em ações menos importantes ou que não devem chamar tanto a atenção do usuário.
+- **Tipo:** `"primary" | "secondary" | "tertiary" | "error" | "success" | "alert"`  
+- **Descrição:** Define a aparência do botão.  
+- **Padrão:** `"primary"`
+
+### `iconStart`
+
+- **Tipo:** `{ iconName: IconName; solid?: boolean }` (opcional)  
+- **Descrição:** Ícone exibido antes do conteúdo do botão.
+
+### `iconEnd`
+
+- **Tipo:** `{ iconName: IconName; solid?: boolean }` (opcional)  
+- **Descrição:** Ícone exibido após o conteúdo do botão.
 
 ### `className`
 
--   **Tipo:** `string` (opcional)
--   **Descrição:** Permite adicionar classes CSS personalizadas para ajustar o estilo do botão.
+- **Tipo:** `string` (opcional)  
+- **Descrição:** Permite adicionar classes CSS personalizadas para ajustar o estilo do botão.
 
 ### `disabled`
 
--   **Tipo:** `boolean` (opcional)
--   **Descrição:** Define se o botão está desabilitado. Quando `true`, o botão não pode ser clicado e muda seu estilo para refletir o estado.
--   **Padrão:** `false`
+- **Tipo:** `boolean` (opcional)  
+- **Descrição:** Define se o botão está desabilitado.  
+- **Padrão:** `false`
 
 ### Atributos HTML
 
--   O botão aceita todas as propriedades padrão de um elemento `<button>` no HTML, incluindo:
-    -   `onClick`: Função para manipular cliques.
-    -   `type`: Define o tipo do botão (`submit`, `button`, ou `reset`).
-    -   `id`: Identificador único.
+O botão aceita todas as propriedades padrão de um elemento `<button>` no HTML, incluindo:
 
-----------
+- `onClick`: Função para manipular cliques.  
+- `type`: Define o tipo do botão (`submit`, `button`, ou `reset`).  
+- `id`: Identificador único.
+
+---
 
 ## Estilização
 
@@ -50,55 +57,72 @@ O botão utiliza estilos padrão definidos por classes Tailwind CSS, ajustados p
 
 ### **Classes por `variant`:**
 
--   **Primary:**
-    -   Ativo: `bg-primary text-white`
-    -   Desabilitado: `bg-disabled text-disabled`
--   **Secondary:**
-    -   Ativo: `bg-primary-50 text-primary`
-    -   Desabilitado: `bg-disabled text-disabled`
--   **Tertiary:**
-    -   Ativo: `text-primary`
-    -   Desabilitado: `text-disabled`
+- **Primary:**  
+  - Ativo: `bg-primary text-white`  
+  - Desabilitado: `bg-disabled text-disabled`
+
+- **Secondary:**  
+  - Ativo: `bg-primary-50 text-primary`  
+  - Desabilitado: `bg-disabled text-disabled`
+
+- **Tertiary:**  
+  - Ativo: `text-primary`  
+  - Desabilitado: `text-disabled`
+
+- **Error / Success / Alert:**  
+  - Customizados com cores específicas como `bg-error`, `bg-success`, `bg-alert`, etc.
 
 ### **Estilo Geral:**
 
--   **Bordas:** `rounded-md` (bordas levemente arredondadas).
--   **Padding:** `px-6 py-2` (espaçamento horizontal e vertical).
+- Bordas: `rounded-md`  
+- Padding: `px-6 py-2`
 
-Essas classes garantem consistência visual, mas podem ser personalizadas adicionando mais estilos via a propriedade `className`.
-
-----------
+---
 
 ## Exemplo de Uso
 
 ### Botão Primário
 
-`<Button variant="primary" onClick={() => console.log('Botão clicado!')}>
+```tsx
+<Button variant="primary" onClick={() => console.log('Clicado')}>
   Enviar
-</Button>` 
+</Button>
+```
 
-### Botão Secundário
+### Com Ícone Inicial
 
-`<Button variant="secondary">
+```tsx
+<Button iconStart={{ iconName: 'ArrowLeftIcon' }}>
   Voltar
-</Button>` 
+</Button>
+```
 
-### Botão Terciário
+### Com Ícone Final
 
-`<Button variant="tertiary" className="text-lg">
-  Saiba Mais
-</Button>` 
+```tsx
+<Button iconEnd={{ iconName: 'ArrowRightIcon' }}>
+  Próximo
+</Button>
+```
+
+### Com Ícones em Ambas as Extremidades
+
+```tsx
+<Button iconStart={{ iconName: 'ArrowLeftIcon' }} iconEnd={{ iconName: 'ArrowRightIcon' }}>
+  Ir
+</Button>
+```
 
 ### Botão Desabilitado
 
-`<Button variant="primary" disabled>
+```tsx
+<Button variant="primary" disabled>
   Enviar (Desabilitado)
-</Button>` 
+</Button>
+```
 
-----------
+---
 
 ## Boas Práticas
 
--   **Use o `variant` apropriado:** Escolha `primary` para ações principais, `secondary` para suportes e `tertiary` para opções menos importantes.
--   **Gerencie o estado `disabled`:** Use o atributo `disabled` para desabilitar ações quando necessário, garantindo uma experiência de usuário clara.
--   **Mantenha a acessibilidade:** Adicione atributos como `aria-label` ou `aria-disabled` quando necessário para melhorar a experiência em leitores de tela.
+- Adicione `aria-label` quando necessário para melhorar a acessibilidade com leitores de tela.

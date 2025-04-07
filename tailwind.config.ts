@@ -67,6 +67,7 @@ const config: Config = {
         primary: 'var(--primary)',
         title: 'var(--text-title)',
         subtitle: 'var(--text-subtitle)',
+        "input-error": 'var(--input-error)',
         "light-surface": "var(--light-surface)",
         "medium-surface": "var(--medium-surface)",
         "dark-surface": "var(--dark-surface)",
