@@ -11,7 +11,6 @@ export type IconContainerProps = {
   size?: number;
   className?: string;
   color?: string;
-  useTokenColor?: boolean;
 };
 
 const IconContainer: React.FC<IconContainerProps> = ({
@@ -19,8 +18,7 @@ const IconContainer: React.FC<IconContainerProps> = ({
   style = "outline",
   size = 12,
   className = "",
-  color = "text-icon",
-  useTokenColor = false,
+  color = "primary",
 }) => {
   const IconComponent =
     style === "solid"
@@ -29,13 +27,19 @@ const IconContainer: React.FC<IconContainerProps> = ({
 
   if (!IconComponent) return null;
 
-  const iconStyle = useTokenColor
-    ? { width: size, height: size, color: `var(--${color})` }
-    : { width: size, height: size, color: color };
+  const isCustomColor = /^#[0-9A-Fa-f]{6}$|^#[0-9A-Fa-f]{3}$|^rgb|^hsl|^var\(--/.test(color);
+  const finalColor = isCustomColor ? color : `text-${color}`;
 
-  const iconClassName = useTokenColor ? className : `${color} ${className}`;
-
-  return <IconComponent className={iconClassName} style={iconStyle} />;
+  return (
+    <IconComponent
+      className={`${isCustomColor ? "" : finalColor} ${className}`}
+      style={{
+        width: size,
+        height: size,
+        ...(isCustomColor ? { color: finalColor } : {}),
+      }}
+    />
+  );
 };
 
 export default IconContainer;

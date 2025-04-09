@@ -9,7 +9,7 @@ export type LinkProps = {
   children: React.ReactNode;
   size?: "xs" | "sm" | "md" | "lg";
   disabled?: boolean;
-  color?: string; // Accepts color tokens or custom values
+  color?: string;
   underline?: boolean;
   iconStart?: InputIconProps;
   iconEnd?: InputIconProps;

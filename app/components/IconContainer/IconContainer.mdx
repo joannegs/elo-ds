@@ -24,7 +24,9 @@ O componente **IconContainer** aceita as seguintes propriedades:
 
 ### `color`
 - **Tipo:** `string` (opcional)
-- **Descrição:** Cor do ícone. Pode ser uma classe Tailwind (`text-blue-500`) ou um token CSS (`primary-500`).
+- **Descrição:** Cor do ícone. Pode ser:
+  - Um token de cor (`primary`, `secondary`, etc.), que será convertido em `text-{color}`.
+  - Um valor de cor customizado como `#RRGGBB`, `rgb(...)`, `hsl(...)` ou `var(--token)`.
 
 ### `useTokenColor`
 - **Tipo:** `boolean` (opcional)
