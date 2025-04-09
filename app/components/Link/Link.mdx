@@ -1,6 +1,7 @@
+
 # Link
 
-O componente **Link** é utilizado para criar links navegáveis na interface do usuário. Ele suporta estados desabilitados e permite personalização por meio de propriedades e classes CSS.
+O componente **Link** é utilizado para criar links navegáveis na interface do usuário. Ele suporta estados desabilitados, ícones e permite personalização por meio de propriedades, estilos e classes CSS.
 
 ----------
 
@@ -8,42 +9,70 @@ O componente **Link** é utilizado para criar links navegáveis na interface do 
 
 O componente **Link** aceita as seguintes propriedades:
 
-### `children`
+### children
 
--   **Tipo:** `React.ReactNode`
--   **Descrição:** O conteúdo exibido dentro do link, geralmente texto.
+- **Tipo:** React.ReactNode  
+- **Descrição:** O conteúdo exibido dentro do link, geralmente texto.
 
-### `href`
+### href
 
--   **Tipo:** `string` (opcional)
--   **Descrição:** O endereço (URL) para onde o link aponta.
--   **Exemplo:** `"/home"` ou `"https://example.com"`.
+- **Tipo:** string (opcional)  
+- **Descrição:** O endereço (URL) para onde o link aponta.  
+- **Exemplo:** "/home" ou "https://example.com".
 
-### `disabled`
+### disabled
 
--   **Tipo:** `boolean` (opcional)
--   **Descrição:** Define se o link está desabilitado.
--   **Comportamento:**
-    -   Quando `true`, o link não pode ser clicado e o atributo `href` é removido.
-    -   A classe `aria-disabled` é adicionada para fins de acessibilidade.
--   **Padrão:** `false`.
+- **Tipo:** boolean (opcional)  
+- **Descrição:** Define se o link está desabilitado.  
+- **Comportamento:**  
+    - Quando true, o link não pode ser clicado e o atributo href é removido.  
+    - A classe aria-disabled é adicionada para fins de acessibilidade.  
+- **Padrão:** false.
 
-### `underline`
+### underline
 
--   **Tipo:** `boolean` (opcional)
--   **Descrição:** Aplica `hover:underline` ao link, exibindo sublinhado ao passar o mouse.
--   **Padrão:** `false`.
+- **Tipo:** boolean (opcional)  
+- **Descrição:** Aplica `hover:underline` ao link, exibindo sublinhado ao passar o mouse.  
+- **Padrão:** false.
 
-### `className`
+### className
 
--   **Tipo:** `string` (opcional)
--   **Descrição:** Permite adicionar classes CSS personalizadas para ajustar o estilo do link.
+- **Tipo:** string (opcional)  
+- **Descrição:** Permite adicionar classes CSS personalizadas para ajustar o estilo do link.
+
+### size
+
+- **Tipo:** "xs" | "sm" | "md" | "lg" (opcional)  
+- **Descrição:** Define o tamanho da tipografia e do ícone, utilizando tokens CSS.  
+- **Padrão:** "md"
+
+### color
+
+- **Tipo:** string (opcional)  
+- **Descrição:** Aceita tokens de cor ou valores customizados (`hex`, `rgb`, `hsl`, `var(...)`).  
+- **Padrão:** "primary"
+
+### `iconStart`
+
+-   **Tipo:** `InputIconProps` (opcional)
+-   **Descrição:** Define o ícone a ser exibido no início do link.
+-   **Valores possíveis:** Um objeto com as propriedades:
+    - `iconName`: Nome do ícone a ser usado (veja as opções de ícones disponíveis).
+    - `solid`: Define se o ícone será sólido ou com contorno. **Padrão:** `false`.
+
+### `iconEnd`
+
+-   **Tipo:** `InputIconProps` (opcional)
+-   **Descrição:** Define o ícone a ser exibido no final do link.
+-   **Valores possíveis:** Um objeto com as propriedades:
+    - `iconName`: Nome do ícone a ser usado (veja as opções de ícones disponíveis).
+    - `solid`: Define se o ícone será sólido ou com contorno. **Padrão:** `false`.
 
 ### Atributos HTML
 
--   O componente aceita todos os atributos padrão de um elemento `<a>`, incluindo:
-    -   `target`: Define como o link será aberto (`_blank`, `_self`, etc.).
-    -   `rel`: Especifica a relação do link com o documento atual.
+- O componente aceita todos os atributos padrão de um elemento `<a>`, incluindo:  
+    - `target`: Define como o link será aberto (`_blank`, `_self`, etc.).  
+    - `rel`: Especifica a relação do link com o documento atual.
 
 ----------
 
@@ -71,9 +100,16 @@ O componente **Link** aceita as seguintes propriedades:
 </Link>
 ```
 
+### Link com Ícone
+
+```tsx
+<Link href="/perfil" iconStart={{ iconName: "user" }}>
+  Meu Perfil
+</Link>
+```
+
 ----------
 
 ## Boas Práticas
 
-2.  **Use `aria-disabled`:** Essa propriedade garante que leitores de tela identifiquem corretamente o estado desabilitado do link.
-4.  **Evite `href` vazio em links ativos:** Sempre defina um valor para `href` quando o link estiver ativo.
+1. **Use `aria-disabled`:** Essa propriedade garante que leitores de tela identifiquem corretamente o estado desabilitado do link.  

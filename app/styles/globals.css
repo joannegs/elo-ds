@@ -97,6 +97,13 @@
     --text-lg: 18px;
     --text-xl: 20px;
 
+    /* Icon Size */
+    --icon-xs: 12;
+    --icon-sm: 14;
+    --icon-md: 16;
+    --icon-lg: 18;
+    --icon-xl: 20;
+
     /* Title Font Size */
     --title-md: 40px;
     --title-lg: 48px;

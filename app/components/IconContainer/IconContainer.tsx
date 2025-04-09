@@ -10,8 +10,8 @@ export type IconContainerProps = {
   style?: HeroIconStyle;
   size?: number;
   className?: string;
-  color?: string; // Aceita tanto classe quanto token CSS
-  useTokenColor?: boolean; // Define se a cor deve vir de um token CSS (true) ou classe Tailwind (false)
+  color?: string;
+  useTokenColor?: boolean;
 };
 
 const IconContainer: React.FC<IconContainerProps> = ({
@@ -31,7 +31,7 @@ const IconContainer: React.FC<IconContainerProps> = ({
 
   const iconStyle = useTokenColor
     ? { width: size, height: size, color: `var(--${color})` }
-    : { width: size, height: size };
+    : { width: size, height: size, color: color };
 
   const iconClassName = useTokenColor ? className : `${color} ${className}`;
 
