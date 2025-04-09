@@ -13,16 +13,17 @@ Eles seguem uma escala que permite criar desde cantos retos até formas completa
       <th style={{ padding: "0.5rem", border: "1px solid #e5e7eb" }}>Token</th>
       <th style={{ padding: "0.5rem", border: "1px solid #e5e7eb" }}>Classe</th>
       <th style={{ padding: "0.5rem", border: "1px solid #e5e7eb" }}>Visual</th>
+      <th style={{ padding: "0.5rem", border: "1px solid #e5e7eb" }}>Valor</th> {/* Nova coluna */}
     </tr>
   </thead>
   <tbody>
     {[
-      ['--border-radius-none', 'rounded-none'],
-      ['--border-radius-sm', 'rounded-sm'],
-      ['--border-radius-md', 'rounded-md'],
-      ['--border-radius-lg', 'rounded-lg'],
-      ['--border-radius-full', 'rounded-full'],
-    ].map(([token, className]) => (
+      ['--border-radius-none', 'rounded-none', '0px'],
+      ['--border-radius-sm', 'rounded-sm', '4px'],
+      ['--border-radius-md', 'rounded-md', '8px'],
+      ['--border-radius-lg', 'rounded-lg', '16px'],
+      ['--border-radius-full', 'rounded-full', '25px'],
+    ].map(([token, className, value]) => (
       <tr key={token}>
         <td style={{ padding: "0.5rem", border: "1px solid #e5e7eb", fontFamily: "monospace" }}>
           {token}
@@ -32,8 +33,11 @@ Eles seguem uma escala que permite criar desde cantos retos até formas completa
         </td>
         <td style={{ padding: "0.5rem", border: "1px solid #e5e7eb" }}>
           <div className={`bg-primary w-16 h-16 ${className}`} >
-          &nbsp; 
-        </div>
+            &nbsp; 
+          </div>
+        </td>
+        <td style={{ padding: "0.5rem", border: "1px solid #e5e7eb", fontFamily: "monospace" }}>
+          {value}
         </td>
       </tr>
     ))}

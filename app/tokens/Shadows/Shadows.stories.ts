@@ -1,11 +1,11 @@
 import { Meta } from '@storybook/react';
-import SpacingTokenDoc from './SpacingTokens.mdx';
+import ShadowTokenDoc from './Shadows.mdx';
 
 export default {
-  title: 'Tokens/Spacing',
+  title: 'Tokens/Shadow',
   parameters: {
     docs: {
-      page: SpacingTokenDoc,
+      page: ShadowTokenDoc,
     },
   },
 } as Meta;

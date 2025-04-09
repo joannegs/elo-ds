@@ -6,7 +6,6 @@ import React from "react";
 export type AvatarProps = {
   size?: "xs" | "sm" | "md" | "lg";
   image?: string;
-  descricao?: string;
   avatarName?: string;
   avatarDescription?: string;
 } & React.HTMLAttributes<HTMLDivElement>;
@@ -21,7 +20,6 @@ const avatarSizeMap = {
 const Avatar = ({
   size = "xs",
   image,
-  descricao = "",
   avatarName,
   avatarDescription,
   className,
@@ -30,7 +28,7 @@ const Avatar = ({
   const avatarSizeClass = avatarSizeMap[size];
 
   const avatarComponent = image ? (
-    <AvatarImage src={image} altDescription={descricao} />
+    <AvatarImage src={image} altDescription={avatarDescription} />
   ) : (
     <AvatarIcon />
   );
@@ -39,7 +37,6 @@ const Avatar = ({
     avatarName && (
       <div
       className={classNames(
-        "mt-1",
         !avatarDescription && "flex"
       )}
       >
@@ -51,7 +48,7 @@ const Avatar = ({
     );
 
   return (
-    <div className="flex gap-4xs">
+    <div className="flex items-center gap-4xs">
       <div
       className={classNames(
         "relative rounded-full bg-slate-100 flex items-center justify-center text-slate-400",

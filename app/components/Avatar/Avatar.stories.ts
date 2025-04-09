@@ -1,5 +1,4 @@
 import { Meta, StoryObj } from "@storybook/react";
-
 import Avatar, { type AvatarProps } from "./Avatar";
 
 const meta: Meta<AvatarProps> = {
@@ -7,7 +6,13 @@ const meta: Meta<AvatarProps> = {
   component: Avatar,
   argTypes: {
     className: { type: "string" },
-    size: { type: "string" },
+    size: {
+      type: "string",
+      options: ["xs", "sm", "md", "lg"],
+      control: {
+        type: "radio",
+      },
+    },
   },
 };
 
@@ -40,6 +45,5 @@ export const AvatarImage: StoryObj<AvatarProps> = {
     size: "lg",
     image: "https://h5p.org/sites/default/files/h5p/content/1209180/images/file-6113d5f8845dc.jpeg",
     avatarName: '',
-    avatarDescription: ''
   },
 };

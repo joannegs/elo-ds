@@ -74,8 +74,6 @@ export const Primary: StoryObj<ButtonStoryArgs> = {
     children: "Botão Primário",
     variant: "primary",
     disabled: false,
-    iconStartName: undefined,
-    iconEndName: undefined,
   },
   render: renderButton,
 };

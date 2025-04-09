@@ -1,11 +1,11 @@
 import { Meta } from '@storybook/react';
-import ColorTokenDoc from './ColorTokens.mdx';
+import RadiusTokenDoc from './Radius.mdx';
 
 export default {
-  title: 'Tokens/Color',
+  title: 'Tokens/Border Radius',
   parameters: {
     docs: {
-      page: ColorTokenDoc,
+      page: RadiusTokenDoc,
     },
   },
 } as Meta;

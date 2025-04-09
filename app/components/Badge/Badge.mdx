@@ -26,14 +26,6 @@ O componente **Badge** aceita as seguintes propriedades:
 -   **Descrição:** O conteúdo do badge, geralmente texto.
 -   **Exemplo:** `"Novo"`, `"Promoção"`
 
-### `borderColor`
-
--   **Tipo:** `"light" | "dark"`
--   **Descrição:** Define a cor da borda do badge.
--   **Valores possíveis:**
-    -   `light`: Borda clara.
-    -   `dark`: Borda escura.
-
 ### `shadow`
 
 -   **Tipo:** `boolean`
@@ -42,11 +34,28 @@ O componente **Badge** aceita as seguintes propriedades:
 
 ### `size`
 
--   **Tipo:** `"big" | "small"`
+-   **Tipo:** `"sm" | "md" | "lg"`
 -   **Descrição:** Define o tamanho do badge.
 -   **Valores possíveis:**
-    -   `big`: Badge maior.
-    -   `small`: Badge menor (padrão).
+    -   `sm`: Badge pequeno.
+    -   `md`: Badge médio (padrão).
+    -   `lg`: Badge grande.
+
+### `iconStart`
+
+-   **Tipo:** `InputIconProps` (opcional)
+-   **Descrição:** Define o ícone a ser exibido no início do badge.
+-   **Valores possíveis:** Um objeto com as propriedades:
+    - `iconName`: Nome do ícone a ser usado (veja as opções de ícones disponíveis).
+    - `solid`: Define se o ícone será sólido ou com contorno. **Padrão:** `false`.
+
+### `iconEnd`
+
+-   **Tipo:** `InputIconProps` (opcional)
+-   **Descrição:** Define o ícone a ser exibido no final do badge.
+-   **Valores possíveis:** Um objeto com as propriedades:
+    - `iconName`: Nome do ícone a ser usado (veja as opções de ícones disponíveis).
+    - `solid`: Define se o ícone será sólido ou com contorno. **Padrão:** `false`.
 
 ### `className`
 
@@ -64,28 +73,66 @@ O componente **Badge** aceita as seguintes propriedades:
 
 ### Badge Primário
 
-`<Badge color="primary" textColor="white" tagContent="Novo" />`
+```tsx
+<Badge color="primary" textColor="white" tagContent="Novo" />`
+```
 
 ### Badge de Sucesso
 
-`<Badge color="success" textColor="white" tagContent="Sucesso" />`
-
+```tsx
+<Badge color="success" textColor="white" tagContent="Sucesso" />
+```
 ### Badge de Erro
 
-`<Badge color="error" textColor="white" tagContent="Erro" />`
+```tsx
+<Badge color="error" textColor="white" tagContent="Erro" />
+```
 
 ### Badge com Sombra
 
-`<Badge color="primary" textColor="white" shadow tagContent="Com Sombra" />`
+```tsx
+<Badge color="primary" textColor="white" shadow tagContent="Com Sombra" />
+```
 
 ### Badge Grande
 
-`<Badge color="primary" textColor="white" size="big" tagContent="Grande" />`
+```tsx
+<Badge color="primary" textColor="white" size="lg" tagContent="Grande" />
+```
 
+### Badge com Ícone no Início
+
+```tsx
+<Badge 
+    color="primary"
+    textColor="white" 
+    iconStart={{ iconName: "ArrowLeftIcon", solid: true }}
+    tagContent="Com Ícone no Início"
+/>
+```
+
+### Badge com Ícone no Final
+
+```tsx
+<Badge
+    color="primary" 
+    textColor="white" 
+    iconEnd={{ iconName: "ArrowRightIcon", solid: false }} 
+    tagContent="Com Ícone no Final" 
+/>
+```
+
+### Badge com Ícones no Início e no Final
+```tsx
+<Badge 
+    color="primary" 
+    textColor="white" 
+    iconStart={{ iconName: "ArrowLeftIcon", solid: true }} 
+    iconEnd={{ iconName: "ArrowRightIcon", solid: false }} 
+    tagContent="Com Ícones" 
+/>
+```
 ----------
 
 ## Boas Práticas
-
--   **Use a `color` apropriada:** Escolha cores que correspondam ao contexto do badge, como `primary` para informações principais, `success` para confirmações e `error` para alertas.
--   **Gerencie o estado `shadow`:** Use a propriedade `shadow` para adicionar profundidade visual ao badge quando necessário.
 -   **Mantenha a acessibilidade:** Adicione atributos como `aria-label` quando necessário para melhorar a experiência em leitores de tela.
