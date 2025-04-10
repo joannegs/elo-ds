@@ -1,12 +1,7 @@
 import React from "react";
 import clsx from "clsx";
-import { IconName } from "../IconContainer/IconContainer";
 import IconContainer from "../IconContainer/IconContainer";
-
-type InputIconProps = {
-  iconName: IconName;
-  solid?: boolean;
-};
+import { InputIconProps } from "@/app/types/Icon.types";
 
 export type ButtonProps = {
   children: React.ReactNode;

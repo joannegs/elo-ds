@@ -1,13 +1,7 @@
 import classNames from "classnames";
 import React from "react";
-import { IconName } from "../IconContainer/IconContainer";
 import IconContainer from "../IconContainer/IconContainer";
-
-type InputIconProps = {
-  iconName: IconName;
-  solid?: boolean;
-};
-
+import { InputIconProps } from "@/app/types/Icon.types";
 
 export type BadgeProps = {
   color: string;

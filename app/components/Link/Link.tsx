@@ -1,9 +1,6 @@
-import IconContainer, { IconName } from "../IconContainer/IconContainer";
-
-type InputIconProps = {
-  iconName: IconName;
-  solid?: boolean;
-};
+import { InputIconProps } from "@/app/types/Icon.types";
+import IconContainer from "../IconContainer/IconContainer";
+import { checkIfCustomColor } from "@/app/utils/utils";
 
 export type LinkProps = {
   children: React.ReactNode;
@@ -28,16 +25,17 @@ const Link = ({
   ...rest
 }: LinkProps) => {
 
-  const isCustomColor = /^#[0-9A-Fa-f]{6}$|^#[0-9A-Fa-f]{3}$|^rgb|^hsl|^var\(--/.test(color);
-
+  const isCustomColor = checkIfCustomColor(color);
   const textColor = isCustomColor ? color : `text-${color}`;
-
   const textSize = `var(--text-${size})`;
   const iconSize = getComputedStyle(document.documentElement).getPropertyValue(`--icon-${size}`).trim();
 
   return (
     <div
-      className={`flex items-center gap-2 ${underline ? "hover:underline" : ""}`}
+      className={`
+        flex 
+        ${disabled ? "cursor-not-allowed" : "cursor-pointer"} 
+        items-center gap-2 ${underline ? "hover:underline" : ""}`}
       style={{ fontSize: textSize }}
     >
       {iconStart && (
@@ -51,7 +49,7 @@ const Link = ({
 
       <a
         href={disabled ? undefined : href}
-        className={`${textColor} ${disabled ? "cursor-not-allowed" : "cursor-pointer"} ${className} ${
+        className={`${textColor} ${className} ${
           underline ? "hover:brightness-50" : ""
         }`}
         style={isCustomColor ? { color } : {}}

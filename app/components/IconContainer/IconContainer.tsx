@@ -1,6 +1,7 @@
 import React from "react";
 import * as OutlineIcons from "@heroicons/react/24/outline";
 import * as SolidIcons from "@heroicons/react/24/solid";
+import { checkIfCustomColor } from "@/app/utils/utils";
 
 export type HeroIconStyle = "outline" | "solid";
 export type IconName = keyof typeof OutlineIcons;
@@ -27,7 +28,7 @@ const IconContainer: React.FC<IconContainerProps> = ({
 
   if (!IconComponent) return null;
 
-  const isCustomColor = /^#[0-9A-Fa-f]{6}$|^#[0-9A-Fa-f]{3}$|^rgb|^hsl|^var\(--/.test(color);
+  const isCustomColor = checkIfCustomColor(color);
   const finalColor = isCustomColor ? color : `text-${color}`;
 
   return (
