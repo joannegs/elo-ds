@@ -12,7 +12,7 @@ const getMultiStepItensClasses = (currentStep: number, step: number, variant: st
   return `${baseClasses} ${stateClass}`;
 };
 
-export const MultiStep = ({
+const MultiStep = ({
   size,
   currentStep = 1,
   variant = "bar",
@@ -47,3 +47,4 @@ export const MultiStep = ({
   );
 };
 
+export default MultiStep;

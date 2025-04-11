@@ -1,10 +1,10 @@
 {
-  "name": "lmts-design-system",
-  "version": "0.1.0",
-  "private": true,
+  "name": "elo-ds",
+  "version": "1.0.0",
+  "private": false,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "tsc",
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",

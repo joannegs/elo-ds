@@ -1,7 +1,7 @@
 import React from "react";
 import * as OutlineIcons from "@heroicons/react/24/outline";
 import * as SolidIcons from "@heroicons/react/24/solid";
-import { checkIfCustomColor } from "@/app/utils/utils";
+import { checkIfCustomColor } from "../../utils/utils";
 
 export type HeroIconStyle = "outline" | "solid";
 export type IconName = keyof typeof OutlineIcons;

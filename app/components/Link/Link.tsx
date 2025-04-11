@@ -1,6 +1,6 @@
-import { InputIconProps } from "@/app/types/Icon.types";
+import { InputIconProps } from "../../types/Icon.types";
 import IconContainer from "../IconContainer/IconContainer";
-import { checkIfCustomColor } from "@/app/utils/utils";
+import { checkIfCustomColor } from "../../utils/utils";
 
 export type LinkProps = {
   children: React.ReactNode;

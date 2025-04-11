@@ -22,7 +22,6 @@ const IconGallery: React.FC<{
             style={style}
             size={size}
             color={color}
-            useTokenColor={useTokenColor}
           />
           <span className="break-words">{iconName}</span>
         </div>

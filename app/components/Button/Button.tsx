@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 import IconContainer from "../IconContainer/IconContainer";
-import { InputIconProps } from "@/app/types/Icon.types";
+import { InputIconProps } from "../../types/Icon.types";
 
 export type ButtonProps = {
   children: React.ReactNode;

@@ -1,0 +1,12 @@
+**/*.stories.*
+**/*.mdx
+
+.storybook
+storybook-static
+
+**/*.test.*
+__tests__/
+
+*.log
+*.env
+.vscode
