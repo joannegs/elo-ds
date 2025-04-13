@@ -4,12 +4,11 @@ export type RadioButtonProps = {
   selected?: boolean;
   disabled?: boolean;
   label?: string;
-  name?: string;
   className?: string;
   onSelect?: (selected: boolean) => void;
 };
 
-const RadioButton: React.FC<RadioButtonProps> = ({ selected = false, disabled, label, name, className, onSelect }) => {
+const RadioButton: React.FC<RadioButtonProps> = ({ selected = false, disabled, label, className, onSelect }) => {
   const [isSelected, setIsSelected] = useState(selected);
 
   useEffect(() => {
@@ -30,12 +29,12 @@ const RadioButton: React.FC<RadioButtonProps> = ({ selected = false, disabled, l
       onClick={toggleSelect}
     >
       <div
-        className={`w-5 h-5 flex items-center justify-center border-2 rounded-full transition-all 
+        className={`size-5 flex items-center justify-center border-2 rounded-full transition-all 
                     ${isSelected ? 'bg-primary border-primary' : 'border-gray-300'}
                     ${disabled ? 'bg-gray-200 border-gray-400' : ''}`}
       >
         {isSelected && (
-          <div className="w-1 h-1 bg-white rounded-full"></div>
+          <div className="size-1 bg-white rounded-full"></div>
         )}
       </div>
       {label && <span className={`leading-none ${disabled ? 'text-gray-400' : ''}`}>{label}</span>}

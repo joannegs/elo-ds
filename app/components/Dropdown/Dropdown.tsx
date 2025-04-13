@@ -41,7 +41,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   };
 
   return (
-    <div className={`relative w-64 ${className}`}>
+    <div className={`relative ${className}`}>
       <button
         className="w-full flex items-center justify-between bg-gray-100 p-2 rounded-md shadow"
         onClick={() => setIsOpen(!isOpen)}
@@ -55,11 +55,11 @@ const Dropdown: React.FC<DropdownProps> = ({
                 .join(", ")
             : placeholder}
         </span>
-        <ChevronDown className="w-4 h-4" />
+        <ChevronDown className="size-4" />
       </button>
 
       {isOpen && (
-        <div className="absolute mt-2 w-full max-h-60 overflow-y-auto bg-white shadow-md rounded-md z-10">
+        <div className="absolute mt-2 w-full overflow-y-auto bg-white shadow-md rounded-md z-10">
           {options.map((option) => {
             const isSelected = selected.includes(option.value);
             return (

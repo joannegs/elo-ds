@@ -19,7 +19,6 @@ const textColorClassMap = {
 const Divider = ({
   children,
   bgColor = "dark",
-  ...rest
 }: DividerProps) => {
   const colorClass = colorClassMap[bgColor];
   const textColorClasses = classNames(

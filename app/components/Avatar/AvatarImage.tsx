@@ -7,11 +7,11 @@ export type AvatarImageProps = {
 
 const AvatarImage = ({ src, altDescription }: AvatarImageProps) => {
   return (
-    <div className="overflow-hidden rounded-full w-full h-full">
+    <div className="overflow-hidden rounded-full size-full">
       <Image
         src={src}
         alt={altDescription || ""}
-        className="rounded-full object-cover w-full h-full"
+        className="rounded-full object-cover size-full"
         width={100}
         height={100}
       />
