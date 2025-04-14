@@ -30,8 +30,8 @@ function getVariant(variant, disabled) {
             return disabled ? '' : '';
     }
 }
-const Button = (_a) => {
+const EloButton = (_a) => {
     var { variant = 'primary', children, iconStart, iconEnd, className, disabled } = _a, rest = __rest(_a, ["variant", "children", "iconStart", "iconEnd", "className", "disabled"]);
     return (_jsxs("button", Object.assign({ className: clsx('rounded-md px-6 py-2 flex items-center justify-center gap-2 transition-all', getVariant(variant, disabled), className), disabled: disabled }, rest, { children: [iconStart && (_jsx(IconContainer, { name: iconStart.iconName, style: iconStart.solid ? 'solid' : 'outline', size: 20, color: "currentColor" })), children, iconEnd && (_jsx(IconContainer, { name: iconEnd.iconName, style: iconEnd.solid ? 'solid' : 'outline', size: 20, color: "currentColor" }))] })));
 };
-export default Button;
+export default EloButton;

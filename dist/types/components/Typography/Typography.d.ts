@@ -9,5 +9,5 @@ export type TypographyProps = VariantProps<typeof textVariants> & {
     children: React.ReactNode;
     element?: keyof JSX.IntrinsicElements;
 } & JSX.IntrinsicElements["p"];
-declare const Typography: ({ children, element, className, ...rest }: TypographyProps) => import("react/jsx-runtime").JSX.Element;
-export default Typography;
+declare const EloTypography: ({ children, element, className, ...rest }: TypographyProps) => import("react/jsx-runtime").JSX.Element;
+export default EloTypography;

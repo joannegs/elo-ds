@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { ProgressIndicator, type ProgressIndicatorProps } from "./ProgressIndicator";
+import EloProgressIndicator, { type ProgressIndicatorProps } from "./ProgressIndicator";
 
 const meta: Meta<ProgressIndicatorProps> = {
   title: "ProgressIndicator",
-  component: ProgressIndicator,
+  component: EloProgressIndicator,
   argTypes: {
     percentage: {
       type: "number",

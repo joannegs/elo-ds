@@ -1,0 +1,73 @@
+
+# EloRadioGroup
+
+O componente **EloRadioGroup** permite que usuários selecionem uma única opção entre várias disponíveis.
+
+---
+
+## Propriedades (Props)
+
+O componente **EloRadioGroup** aceita as seguintes propriedades:
+
+### `options`
+
+- **Tipo:** `RadioOption[]`  
+- **Descrição:** Lista de opções disponíveis no grupo. Cada opção possui as chaves `label`, `value` e opcionalmente `disabled`.
+
+### `value`
+
+- **Tipo:** `string` (opcional)  
+- **Descrição:** Valor atualmente selecionado no grupo.
+
+### `name`
+
+- **Tipo:** `string` (opcional)  
+- **Descrição:** Nome do grupo, útil para identificação e agrupamento de inputs em formulários.
+
+### `className`
+
+- **Tipo:** `string` (opcional)  
+- **Descrição:** Permite aplicar classes CSS personalizadas ao wrapper do grupo.
+
+### `onChange`
+
+- **Tipo:** `(value: string) => void` (opcional)  
+- **Descrição:** Função chamada quando o valor selecionado for alterado.
+
+---
+
+## Exemplo de Uso
+
+### Grupo Padrão
+
+```tsx
+<EloRadioGroup
+  name="example-group"
+  value="1"
+  options={[
+    { label: 'Opção 1', value: '1' },
+    { label: 'Opção 2', value: '2' }
+  ]}
+  onChange={(val) => console.log(val)}
+/>
+```
+
+### Com Opção Desabilitada
+
+```tsx
+<EloRadioGroup
+  name="example-group"
+  value="1"
+  options={[
+    { label: 'Opção 1', value: '1' },
+    { label: 'Opção 2', value: '2', disabled: true }
+  ]}
+  onChange={(val) => console.log(val)}
+/>
+```
+
+---
+
+## Boas Práticas
+
+- Use `value` controlado em conjunto com `onChange` para manter a consistência de estado.

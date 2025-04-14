@@ -6,5 +6,5 @@ export type ButtonProps = {
     iconStart?: InputIconProps;
     iconEnd?: InputIconProps;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
-declare const Button: ({ variant, children, iconStart, iconEnd, className, disabled, ...rest }: ButtonProps) => import("react/jsx-runtime").JSX.Element;
-export default Button;
+declare const EloButton: ({ variant, children, iconStart, iconEnd, className, disabled, ...rest }: ButtonProps) => import("react/jsx-runtime").JSX.Element;
+export default EloButton;

@@ -6,5 +6,5 @@ export type CheckboxProps = {
     className?: string;
     onChange?: (checked: boolean) => void;
 };
-declare const Checkbox: React.FC<CheckboxProps>;
-export default Checkbox;
+declare const EloCheckbox: React.FC<CheckboxProps>;
+export default EloCheckbox;

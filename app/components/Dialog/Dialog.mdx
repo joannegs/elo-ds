@@ -54,7 +54,7 @@ As classes podem ser personalizadas adicionando mais estilos via a propriedade `
 ### Diálogo de Confirmação
 
 ```tsx
-<Dialog
+<EloDialog
   title="Confirmação"
   description="Tem certeza que deseja continuar?"
   onClose={() => setOpen(false)}
@@ -64,13 +64,13 @@ As classes podem ser personalizadas adicionando mais estilos via a propriedade `
   ]}
 >
   <p>Conteúdo adicional</p>
-</Dialog>
+</EloDialog>
 ```
 
 ### Diálogo de Erro
 
 ```tsx
-<Dialog
+<EloDialog
   title="Erro"
   description="Ocorreu um erro ao processar sua solicitação."
   onClose={() =>                                                                                                                                                                                                                                                                                                              setOpen(false)}
@@ -83,7 +83,7 @@ As classes podem ser personalizadas adicionando mais estilos via a propriedade `
 ### Diálogo de Sucesso
 
 ```tsx
-<Dialog
+<EloDialog
   title="Sucesso"
   description="Sua operação foi concluída com sucesso."
   onClose={() => setOpen(false)}
@@ -94,7 +94,5 @@ As classes podem ser personalizadas adicionando mais estilos via a propriedade `
 ```
 
 ## Boas Práticas
--   **Use o `title` apropriado**: Escolha títulos que descrevam claramente o propósito do diálogo.
 -   **Gerencie o estado `onClose`**: Use a função onClose para controlar o fechamento do diálogo, garantindo uma experiência de usuário clara.
--   **Adicione `actions` relevantes**: Inclua botões de ação que permitam ao usuário tomar decisões claras e diretas.
 -   **Mantenha a acessibilidade**: Adicione atributos como aria-label ou aria-describedby quando necessário para melhorar a experiência em leitores de tela.

@@ -1,6 +1,6 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { Mail, Facebook, Instagram } from "lucide-react";
-const Footer = ({ backgroundColor = "footer", logo, socialLinks, className, }) => {
+const EloFooter = ({ backgroundColor = "footer", logo, socialLinks, className, }) => {
     return (_jsxs("footer", { className: `bg-${backgroundColor} text-white py-4 px-6 flex justify-between items-center ${className}`, children: [_jsx("div", { className: "flex items-center gap-2", children: logo }), _jsx("div", { className: "flex items-center gap-4", children: _jsx("div", { className: "max-h-[58px]", children: _jsx("img", { src: "lmts-logo.png", alt: "LMTS Logo", className: "max-h-[58px]" }) }) }), _jsxs("div", { className: "flex items-center gap-4", children: [(socialLinks === null || socialLinks === void 0 ? void 0 : socialLinks.email) && (_jsx("a", { href: `mailto:${socialLinks.email}`, "aria-label": "Email", children: _jsx(Mail, { className: "text-white hover:opacity-80" }) })), (socialLinks === null || socialLinks === void 0 ? void 0 : socialLinks.facebook) && (_jsx("a", { href: socialLinks.facebook, target: "_blank", rel: "noopener noreferrer", "aria-label": "Facebook", children: _jsx(Facebook, { className: "text-white hover:opacity-80" }) })), (socialLinks === null || socialLinks === void 0 ? void 0 : socialLinks.instagram) && (_jsx("a", { href: socialLinks.instagram, target: "_blank", rel: "noopener noreferrer", "aria-label": "Instagram", children: _jsx(Instagram, { className: "text-white hover:opacity-80" }) }))] })] }));
 };
-export default Footer;
+export default EloFooter;

@@ -14,5 +14,5 @@ export type InputProps = {
     iconEnd?: InputIconProps;
     error?: InputErrorProps;
 } & (React.InputHTMLAttributes<HTMLInputElement> | React.TextareaHTMLAttributes<HTMLTextAreaElement>);
-declare const Input: React.ForwardRefExoticComponent<InputProps & React.RefAttributes<HTMLInputElement | HTMLTextAreaElement>>;
-export default Input;
+declare const EloInput: React.ForwardRefExoticComponent<InputProps & React.RefAttributes<HTMLInputElement | HTMLTextAreaElement>>;
+export default EloInput;

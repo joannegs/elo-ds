@@ -5,5 +5,5 @@ export type TextBoxProps = {
     content: string;
     className?: string;
 } & React.HTMLAttributes<HTMLDivElement>;
-declare const TextBox: ({ title, content, className, titleSize, ...rest }: TextBoxProps) => import("react/jsx-runtime").JSX.Element;
-export default TextBox;
+declare const EloTextBox: ({ title, content, className, titleSize, ...rest }: TextBoxProps) => import("react/jsx-runtime").JSX.Element;
+export default EloTextBox;

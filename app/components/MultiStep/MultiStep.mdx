@@ -46,34 +46,20 @@ O componente **MultiStep** aceita as seguintes propriedades:
 
 ### Indicador de Progresso em Barra
 
-```jsx
-<MultiStep size={5} currentStep={3} variant="bar" />
+```tsx
+<EloMultiStep size={5} currentStep={3} variant="bar" />
 ```
 
 ### Indicador de Progresso em Pontos
 
-```jsx
-<MultiStep size={4} currentStep={2} variant="dot" />
+```tsx
+<EloMultiStep size={4} currentStep={2} variant="dot" />
 ```
 
 ### Indicador de Progresso com Classes Personalizadas
 
-```jsx
-<MultiStep size={6} currentStep={4} className="custom-class" />
+```tsx
+<EloMultiStep size={6} currentStep={4} className="custom-class" />
 ```
 
 ----------
-
-## Boas Práticas
-
--   **Escolha o estilo adequado ao contexto:**
-    -   Use a variante `bar` para uma representação visual contínua do progresso.
-    -   Use a variante `dot` para uma visualização mais discreta ou minimalista.
--   **Defina o número de etapas corretamente:** Certifique-se de que o valor da propriedade `size` corresponde ao número esperado de etapas.
--   **Atualize dinamicamente o progresso:** Ajuste a propriedade `currentStep` para refletir o progresso em tempo real.
--   **Estilize conforme necessário:** Utilize a propriedade `className` para personalizações específicas do projeto.
--   **Acessibilidade:** Sempre use `aria-label` ou `aria-labelledby` para descrever o progresso em cenários onde a acessibilidade é importante.
-
-----------
-
-Componente flexível e intuitivo para exibição de progresso por etapas. Personalizável em aparência e comportamento, o **MultiStep** se adapta facilmente a diferentes fluxos de trabalho.

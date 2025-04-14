@@ -55,34 +55,35 @@ O componente **Switch** aceita as seguintes propriedades:
 
 ### Switch Padrão
 
-`<Switch defaultEnable={true} variant="default" />` 
+```tsx
+<EloSwitch defaultEnable={true} variant="default" />
+```
 
 ### Switch Colorido
 
-`<Switch
+```tsx
+<EloSwitch
   defaultEnable={false}
   variant="colorful"
   onChange={(enabled) => console.log("Novo estado:", enabled)}
-/>` 
+/>
+```
 
 ### Switch Compacto
 
-`<Switch size="small" />` 
+```tsx
+<EloSwitch size="small" />
+```
 
 ### Switch Colorido com Ícones
 
-`<Switch variant="colorful-icon" defaultEnable={true} />` 
+```tsx
+<EloSwitch variant="colorful-icon" defaultEnable={true} />
+```
 
 ### Switch Desabilitado
-
-`<Switch disabled />` 
+```tsx
+<EloSwitch disabled />
+```
 
 ----------
-
-## Boas Práticas
-
--   **Use o tamanho apropriado:** Escolha `small` para áreas mais compactas e `default` para tamanhos padrão.
--   **Variante Colorida para Feedback:** Utilize a variante `colorful` quando o estado ativo/desativo precisar de maior distinção visual.
--   **Variante Colorida com Ícones para Contextos Visuais:** Use `colorful-icon` para contextos onde ícones visuais melhoram a compreensão do estado.
--   **Desabilite quando necessário:** Use `disabled` para switches que não devem ser interativos, mas precisam ser exibidos.
-

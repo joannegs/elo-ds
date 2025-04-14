@@ -12,7 +12,7 @@ var __rest = (this && this.__rest) || function (s, e) {
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import classNames from "classnames";
 import IconContainer from "../IconContainer/IconContainer";
-const Badge = (_a) => {
+const EloBadge = (_a) => {
     var { color = "primary", textColor = "text-title", shadow, tagContent, iconStart, iconEnd, className, size = "sm" } = _a, rest = __rest(_a, ["color", "textColor", "shadow", "tagContent", "iconStart", "iconEnd", "className", "size"]);
     const sizeMap = {
         sm: {
@@ -38,4 +38,4 @@ const Badge = (_a) => {
     const badgeClasses = classNames(`bg-${color}`, `text-${textColor}`, "rounded-[20px]", "inline-flex", "items-center", "gap-2", paddingVertical, paddingHorizontal, fontSize, height, shadow ? "shadow-sm" : "", className);
     return (_jsxs("div", Object.assign({ className: badgeClasses }, rest, { children: [iconStart && (_jsx(IconContainer, { name: iconStart.iconName, style: iconStart.solid ? 'solid' : 'outline', size: 20, color: "currentColor" })), _jsx("span", { children: tagContent }), iconEnd && (_jsx(IconContainer, { name: iconEnd.iconName, style: iconEnd.solid ? 'solid' : 'outline', size: 20, color: "currentColor" }))] })));
 };
-export default Badge;
+export default EloBadge;

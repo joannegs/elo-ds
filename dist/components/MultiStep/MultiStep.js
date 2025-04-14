@@ -15,10 +15,11 @@ const getMultiStepItensClasses = (currentStep, step, variant) => {
     const stateClass = currentStep >= step ? "bg-primary" : "bg-disabled";
     return `${baseClasses} ${stateClass}`;
 };
-export const MultiStep = (_a) => {
+const EloMultiStep = (_a) => {
     var { size, currentStep = 1, variant = "bar", className } = _a, rest = __rest(_a, ["size", "currentStep", "variant", "className"]);
     const MultiStepContainerClasses = variant === "dot" ? "flex items-center justify-center" : "";
     return (_jsx("div", Object.assign({ className: `${MultiStepContainerClasses} ${className}` }, rest, { children: _jsx("div", { className: `grid gap-1`, style: {
                 gridTemplateColumns: `repeat(${size}, minmax(0, 1fr))`,
             }, children: Array.from({ length: size }, (_, i) => i + 1).map((step) => (_jsx("div", { className: `${getMultiStepItensClasses(currentStep, step, variant)}` }, step))) }) })));
 };
+export default EloMultiStep;

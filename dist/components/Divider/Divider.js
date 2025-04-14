@@ -19,11 +19,11 @@ const textColorClassMap = {
     light: "text-light-surface",
     dark: "text-dark-surface",
 };
-const Divider = (_a) => {
+const EloDivider = (_a) => {
     var { children, bgColor = "dark" } = _a, rest = __rest(_a, ["children", "bgColor"]);
     const colorClass = colorClassMap[bgColor];
     const textColorClasses = classNames(textColorClassMap[bgColor], "px-3", "text-center");
     const barClass = classNames(children ? "w-1/3" : "w-1/2", "h-[2px]", colorClass);
     return (_jsxs("div", { className: classNames("flex items-center justify-center"), children: [_jsx("div", { className: barClass }), children && _jsx("div", { className: textColorClasses, children: children }), _jsx("div", { className: barClass })] }));
 };
-export default Divider;
+export default EloDivider;

@@ -11,5 +11,5 @@ export type CardContainerProps = {
     };
     children: React.ReactNode;
 };
-declare const CardContainer: React.FC<CardContainerProps>;
-export default CardContainer;
+declare const EloCardContainer: React.FC<CardContainerProps>;
+export default EloCardContainer;

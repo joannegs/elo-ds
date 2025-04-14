@@ -2,21 +2,6 @@
 
 O componente **Avatar** é utilizado para exibir uma representação visual de um usuário ou entidade. Ele pode incluir uma imagem, um ícone de substituição e informações adicionais como nome e descrição, seguindo o padrão do design system.
 
-## Exemplos no Storybook
-
-### Tamanhos
-- **Pequeno (xs)**: Representado pelo exemplo `AvatarSmall`.
-- **Médio (md)**: Representado pelo exemplo `AvatarMedium`.
-- **Grande (lg)**: Representado pelo exemplo `AvatarLarge`.
-
-### Com Imagem
-- Exibe um avatar com uma imagem externa no exemplo `AvatarImage`.
-
-### Somente Nome
-- Apenas o nome é exibido sem a descrição, centralizado.
-
----
-
 ## Propriedades (Props)
 
 O componente Avatar aceita as seguintes propriedades:
@@ -58,3 +43,34 @@ O componente Avatar aceita as seguintes propriedades:
 
 ### Atributos HTML
 - O componente também aceita quaisquer atributos padrão de uma `div`, como `onClick`, `id`, etc.
+
+----------
+
+## Exemplo de Uso
+
+### Com Imagem
+Renderiza a imagem fornecida como avatar.
+
+```tsx
+<EloAvatar 
+  size="md" 
+  image="https://i.pravatar.cc/100" 
+  avatarName="Jane Doe" 
+  avatarDescription="Desenvolvedora React" 
+/>
+```
+
+### Somente Nome
+Exibe apenas o nome, sem descrição.
+
+```tsx
+<EloAvatar avatarName="John Doe" />
+```
+
+### Ícone padrão (sem imagem)
+Quando a prop `image` não é fornecida, um ícone padrão é exibido.
+
+```tsx
+<EloAvatar size="sm" avatarName="Usuário Genérico" avatarDescription="Convidado" />
+```
+---

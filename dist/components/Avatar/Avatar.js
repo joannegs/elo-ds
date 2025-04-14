@@ -19,11 +19,11 @@ const avatarSizeMap = {
     md: "w-8 h-8",
     lg: "w-9 h-9",
 };
-const Avatar = (_a) => {
+const EloAvatar = (_a) => {
     var { size = "xs", image, avatarName, avatarDescription, className } = _a, rest = __rest(_a, ["size", "image", "avatarName", "avatarDescription", "className"]);
     const avatarSizeClass = avatarSizeMap[size];
     const avatarComponent = image ? (_jsx(AvatarImage, { src: image, altDescription: avatarDescription })) : (_jsx(AvatarIcon, {}));
     const avatarInfoComponent = avatarName && (_jsxs("div", { className: classNames(!avatarDescription && "flex"), children: [_jsx("p", { className: "text-sm font-semibold text-title", children: avatarName }), avatarDescription && (_jsx("p", { className: "text-xs text-subtitle", children: avatarDescription }))] }));
     return (_jsxs("div", { className: "flex items-center gap-4xs", children: [_jsx("div", Object.assign({ className: classNames("relative rounded-full bg-slate-100 flex items-center justify-center text-slate-400", avatarSizeClass, className) }, rest, { children: avatarComponent })), avatarInfoComponent] }));
 };
-export default Avatar;
+export default EloAvatar;

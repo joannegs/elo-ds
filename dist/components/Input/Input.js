@@ -19,7 +19,7 @@ const InputOrTextArea = forwardRef((props, ref) => {
     return (_jsx("input", Object.assign({ ref: ref }, props)));
 });
 InputOrTextArea.displayName = "InputOrTextArea";
-const Input = forwardRef((_a, ref) => {
+const EloInput = forwardRef((_a, ref) => {
     var { label, className, iconStart, iconEnd, error, required } = _a, rest = __rest(_a, ["label", "className", "iconStart", "iconEnd", "error", "required"]);
     return (_jsxs("div", { className: "relative w-full", children: [label && (_jsxs("label", { className: "absolute pt-1 pl-3 text-xs text-subtitle", children: [label, required && ' *'] })), _jsxs("div", { className: `
             flex items-center w-full rounded-md border p-3 gap-2
@@ -28,5 +28,4 @@ const Input = forwardRef((_a, ref) => {
             disabled:bg-disabled disabled:text-grey disabled:border-2 disabled:border-disabled
           `, children: [iconStart && (_jsx(IconContainer, { name: iconStart.iconName, style: iconStart.solid ? "solid" : "outline", size: 20, color: "text-medium-surface" })), _jsx(InputOrTextArea, Object.assign({ ref: ref, className: `flex-1 bg-transparent outline-none ${className || ""}`, required: required }, rest)), iconEnd && (_jsx(IconContainer, { name: iconEnd.iconName, style: iconEnd.solid ? "solid" : "outline", size: 20, color: "text-medium-surface" }))] }), (error === null || error === void 0 ? void 0 : error.message) && (_jsx("p", { className: "mt-1 ml-2 text-sm text-input-error", children: error.message }))] }));
 });
-Input.displayName = "Input";
-export default Input;
+export default EloInput;

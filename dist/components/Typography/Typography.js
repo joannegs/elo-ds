@@ -33,9 +33,9 @@ const textVariants = cva("theme-gray text-primary text-sm font-normal", {
         },
     },
 });
-const Typography = (_a) => {
+const EloTypography = (_a) => {
     var { children, element = "p", className } = _a, rest = __rest(_a, ["children", "element", "className"]);
     const Element = element;
     return (_jsx(Element, Object.assign({ className: `theme-grey ${textVariants(rest)} ${className}` }, rest, { children: children })));
 };
-export default Typography;
+export default EloTypography;

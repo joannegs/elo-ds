@@ -1,9 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { MultiStep, MultiStepProps } from './MultiStep';
+import EloMultiStep, { MultiStepProps } from './MultiStep';
 
 const meta: Meta<MultiStepProps> = {
   title: 'MultiStep',
-  component: MultiStep,
+  component: EloMultiStep,
   argTypes: {
     size: {
       control: { type: 'number' },

@@ -9,5 +9,5 @@ export type IconContainerProps = {
     className?: string;
     color?: string;
 };
-declare const IconContainer: React.FC<IconContainerProps>;
-export default IconContainer;
+declare const EloIconContainer: React.FC<IconContainerProps>;
+export default EloIconContainer;

@@ -14,7 +14,7 @@ import { Switch as HeadlessSwitch, } from "@headlessui/react";
 import { useState } from "react";
 import { CheckIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import useStyle from "./Switch.style";
-const Switch = (_a) => {
+const EloSwitch = (_a) => {
     var { defaultEnable: enabledByDefault, variant = "default", size = "default", disabled, onChange } = _a, rest = __rest(_a, ["defaultEnable", "variant", "size", "disabled", "onChange"]);
     const [enabled, setEnabled] = useState(enabledByDefault);
     const style = useStyle({ variant, enabled, disabled, size });
@@ -25,4 +25,4 @@ const Switch = (_a) => {
     };
     return (_jsxs(HeadlessSwitch, Object.assign({ checked: enabled, onChange: toggle, disabled: disabled, className: style.Container }, rest, { children: [_jsx("span", { className: "sr-only", children: "switch toggle" }), variant !== "colorful-icon" && _jsx("span", { className: style.Switch }), variant === "colorful-icon" && (_jsxs("span", { className: style.Switch, children: [enabled && (_jsx(CheckIcon, { className: style.Icon, "aria-disabled": disabled })), enabled || (_jsx(XMarkIcon, { className: style.Icon, "aria-disabled": disabled }))] }))] })));
 };
-export default Switch;
+export default EloSwitch;

@@ -5,5 +5,5 @@ export type HeaderProps = {
     className?: string;
     backgroundColor: string;
 };
-declare const Header: React.FC<HeaderProps>;
-export default Header;
+declare const EloHeader: React.FC<HeaderProps>;
+export default EloHeader;

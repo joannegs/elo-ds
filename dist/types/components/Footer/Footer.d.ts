@@ -10,5 +10,5 @@ export type FooterProps = {
     };
     className?: string;
 };
-declare const Footer: React.FC<FooterProps>;
-export default Footer;
+declare const EloFooter: React.FC<FooterProps>;
+export default EloFooter;

@@ -10,5 +10,5 @@ export type DialogProps = {
     }>;
     children?: React.ReactNode;
 };
-declare const Dialog: ({ title, description, onClose, actions, children, }: DialogProps) => import("react/jsx-runtime").JSX.Element;
-export default Dialog;
+declare const EloDialog: ({ title, description, onClose, actions, children, }: DialogProps) => import("react/jsx-runtime").JSX.Element;
+export default EloDialog;

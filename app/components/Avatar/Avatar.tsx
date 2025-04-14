@@ -17,7 +17,7 @@ const avatarSizeMap = {
   lg: "w-9 h-9",
 };
 
-const Avatar = ({
+const EloAvatar = ({
   size = "xs",
   image,
   avatarName,
@@ -65,4 +65,4 @@ const Avatar = ({
   );
 };
 
-export default Avatar;
+export default EloAvatar;

@@ -5,5 +5,5 @@ export type AvatarProps = {
     avatarName?: string;
     avatarDescription?: string;
 } & React.HTMLAttributes<HTMLDivElement>;
-declare const Avatar: ({ size, image, avatarName, avatarDescription, className, ...rest }: AvatarProps) => import("react/jsx-runtime").JSX.Element;
-export default Avatar;
+declare const EloAvatar: ({ size, image, avatarName, avatarDescription, className, ...rest }: AvatarProps) => import("react/jsx-runtime").JSX.Element;
+export default EloAvatar;

@@ -4,4 +4,5 @@ export type MultiStepProps = {
     currentStep: number;
     variant?: "bar" | "dot";
 } & React.HTMLAttributes<HTMLDivElement>;
-export declare const MultiStep: ({ size, currentStep, variant, className, ...rest }: MultiStepProps) => import("react/jsx-runtime").JSX.Element;
+declare const EloMultiStep: ({ size, currentStep, variant, className, ...rest }: MultiStepProps) => import("react/jsx-runtime").JSX.Element;
+export default EloMultiStep;

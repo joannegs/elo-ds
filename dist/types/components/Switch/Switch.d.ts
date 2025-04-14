@@ -6,5 +6,5 @@ export type SwitchProps = {
     size: "small" | "default";
     onChange?: (enabled: boolean) => void;
 } & HeadlessSwitchProps<any>;
-declare const Switch: ({ defaultEnable: enabledByDefault, variant, size, disabled, onChange, ...rest }: SwitchProps) => import("react/jsx-runtime").JSX.Element;
-export default Switch;
+declare const EloSwitch: ({ defaultEnable: enabledByDefault, variant, size, disabled, onChange, ...rest }: SwitchProps) => import("react/jsx-runtime").JSX.Element;
+export default EloSwitch;

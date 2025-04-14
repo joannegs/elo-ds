@@ -8,5 +8,5 @@ export type LinkProps = {
     iconStart?: InputIconProps;
     iconEnd?: InputIconProps;
 } & React.AnchorHTMLAttributes<HTMLAnchorElement>;
-declare const Link: ({ children, href, disabled, underline, className, size, iconStart, iconEnd, color, ...rest }: LinkProps) => import("react/jsx-runtime").JSX.Element;
-export default Link;
+declare const EloLink: ({ children, href, disabled, underline, className, size, iconStart, iconEnd, color, ...rest }: LinkProps) => import("react/jsx-runtime").JSX.Element;
+export default EloLink;

@@ -1,6 +1,6 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { useState, useEffect } from "react";
-const Checkbox = ({ checked = false, disabled, label, className, onChange }) => {
+const EloCheckbox = ({ checked = false, disabled, label, className, onChange }) => {
     const [isChecked, setIsChecked] = useState(checked);
     useEffect(() => {
         setIsChecked(checked);
@@ -16,4 +16,4 @@ const Checkbox = ({ checked = false, disabled, label, className, onChange }) => 
                     ${isChecked ? 'bg-primary border-primary' : 'border-gray-300'}
                     ${disabled ? 'bg-gray-200 border-gray-400' : ''}`, children: isChecked && (_jsx("svg", { xmlns: "http://www.w3.org/2000/svg", className: "w-3 h-3 text-white", viewBox: "0 0 20 20", fill: "currentColor", children: _jsx("path", { fillRule: "evenodd", d: "M16.707 5.293a1 1 0 00-1.414 0L7 13.586l-2.293-2.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l9-9a1 1 0 000-1.414z", clipRule: "evenodd" }) })) }), label && _jsx("span", { className: disabled ? 'text-gray-400' : '', children: label })] }));
 };
-export default Checkbox;
+export default EloCheckbox;

@@ -47,7 +47,7 @@ O componente **TextBox** aceita as seguintes propriedades:
 ### TextBox Padrão
 
 ```tsx
-<TextBox
+<EloTextBox
   title="Default Title"
   titleSize="title2"
   content="Este é o conteúdo padrão do TextBox, exibido abaixo do título."
@@ -57,7 +57,7 @@ O componente **TextBox** aceita as seguintes propriedades:
 ### TextBox Sem Título
 
 ```tsx
-<TextBox
+<EloTextBox
   content="Este é um TextBox sem título. Apenas o conteúdo é exibido."
 />
 ```
@@ -65,20 +65,12 @@ O componente **TextBox** aceita as seguintes propriedades:
 ### TextBox com Estilo Personalizado
 
 ```tsx
-<TextBox
+<EloTextBox
   title="Custom Styled Title"
   titleSize="title1"
   content="Este é um TextBox com classes adicionais para personalização."
   className="bg-blue-100 p-8 border border-blue-400"
 />
 ```
-
-----------
-
-## Boas Práticas
-
--   **Inclua um título quando necessário:** Use a propriedade `title` e ajuste o tamanho com `titleSize` para criar hierarquia visual.
--   **Use classes personalizadas:** Utilize a propriedade `className` para ajustar cores, margens e outros estilos conforme necessário.
--   **Acessibilidade:** Adicione atributos como `aria-label` para tornar o componente mais acessível.
 
 ----------

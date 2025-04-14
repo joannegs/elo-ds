@@ -9,5 +9,5 @@ export type BadgeProps = {
     iconStart?: InputIconProps;
     iconEnd?: InputIconProps;
 } & React.HTMLAttributes<HTMLDivElement>;
-declare const Badge: ({ color, textColor, shadow, tagContent, iconStart, iconEnd, className, size, ...rest }: BadgeProps) => import("react/jsx-runtime").JSX.Element;
-export default Badge;
+declare const EloBadge: ({ color, textColor, shadow, tagContent, iconStart, iconEnd, className, size, ...rest }: BadgeProps) => import("react/jsx-runtime").JSX.Element;
+export default EloBadge;

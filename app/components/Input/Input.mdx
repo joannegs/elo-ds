@@ -63,7 +63,9 @@ Adicione classes CSS personalizadas usando a propriedade `className`.
 
 Exemplo:
 
-`<Input className="border-2 border-red-500" placeholder="Campo com borda personalizada" />` 
+```tsx
+<EloInput className="border-2 border-red-500" placeholder="Campo com borda personalizada" />
+```
 
 ----------
 
@@ -71,26 +73,33 @@ Exemplo:
 
 ### Input Simples
 
-`<Input placeholder="Digite seu nome" />` 
+```tsx
+<EloInput placeholder="Digite seu nome" />
+```
 
-### Input com Rótulo
+### Input com Label
 
-`<Input label="Nome Completo" placeholder="Digite seu nome" />` 
+```tsx
+<EloInput label="Nome Completo" placeholder="Digite seu nome" /> 
+```
 
 ### Textarea Multiline
 
-`<Input multiline placeholder="Digite sua mensagem" />` 
+```tsx
+<EloInput multiline placeholder="Digite sua mensagem" />
+```
 
 ### Input Desabilitado
 
-
-`<Input label="Desabilitado" disabled placeholder="Não editável" />` 
+```tsx
+<EloInput label="Desabilitado" disabled placeholder="Não editável" /> 
+```
 
 ### Capturando o Valor do Input
 
 Use a propriedade `onChange` para capturar o valor do campo conforme o usuário digita.
 
-```
+```tsx
 const FormComponent = () => {
   const [value, setValue] = useState("");
 
@@ -100,7 +109,7 @@ const FormComponent = () => {
   };
 
   return (
-    <Input
+    <EloInput
       label="Nome"
       placeholder="Digite seu nome"
       value={value}
@@ -114,15 +123,6 @@ const FormComponent = () => {
 
 ## Boas Práticas
 
-1.  **Use rótulos (`label`) para melhor acessibilidade:**
-    
-    -   Adicionar rótulos ajuda os leitores de tela a identificar o campo.
+1.  **Use (`label`) para ajudar os leitores de tela a identificar o campo:**
 2.  **Sempre forneça um `placeholder`:**
-    
     -   Dicas claras dentro do campo melhoram a experiência do usuário.
-3.  **Evite dependências externas para capturar valores:**
-    
-    -   Use o evento `onChange` diretamente para gerenciar o estado.
-4.  **Considere o uso de estados desabilitados:**
-    
-    -   Use `disabled` para campos que não devem ser editáveis, mas precisam ser exibidos.

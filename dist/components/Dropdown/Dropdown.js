@@ -2,7 +2,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import Checkbox from "../Checkbox/Checkbox";
-const Dropdown = ({ options, selectedValues = [], onSelectionChange, className, placeholder = "Selecione", multiSelect = true, }) => {
+const EloDropdown = ({ options, selectedValues = [], onSelectionChange, className, placeholder = "Selecione", multiSelect = true, }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [selected, setSelected] = useState(selectedValues);
     const handleSelect = (value) => {
@@ -31,4 +31,4 @@ const Dropdown = ({ options, selectedValues = [], onSelectionChange, className, 
                     return (_jsxs("div", { onClick: () => handleSelect(option.value), className: "flex items-center p-2 cursor-pointer hover:bg-gray-100", children: [multiSelect && (_jsx(Checkbox, { checked: isSelected, onChange: () => handleSelect(option.value) })), _jsx("span", { className: `ml-2 ${isSelected ? "text-primary font-medium" : "text-black"}`, children: option.label })] }, option.value));
                 }) }))] }));
 };
-export default Dropdown;
+export default EloDropdown;

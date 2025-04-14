@@ -10,5 +10,5 @@ export type DropdownProps = {
     placeholder?: string;
     multiSelect?: boolean;
 };
-declare const Dropdown: React.FC<DropdownProps>;
-export default Dropdown;
+declare const EloDropdown: React.FC<DropdownProps>;
+export default EloDropdown;

@@ -11,8 +11,8 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import Typography from "../Typography/Typography";
-const TextBox = (_a) => {
+const EloTextBox = (_a) => {
     var { title, content, className, titleSize } = _a, rest = __rest(_a, ["title", "content", "className", "titleSize"]);
     return (_jsxs("div", Object.assign({ className: `bg-light-surface p-5 rounded-md shadow-md ${className}` }, rest, { children: [title && (_jsx(Typography, { element: "h2", variant: "primary", size: titleSize, className: "font-bold mb-4", children: title })), _jsx(Typography, { element: "p", variant: "primary", children: content })] })));
 };
-export default TextBox;
+export default EloTextBox;

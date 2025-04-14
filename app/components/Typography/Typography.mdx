@@ -1,6 +1,6 @@
 # Typography
 
-O componente **Typography** é utilizado para renderizar textos no aplicativo, seguindo o padrão do design system. Ele permite definir variantes, tamanhos e estilos para atender às necessidades de exibição de texto em diferentes contextos.
+O componente **Typography** é utilizado para renderizar textos, seguindo o padrão do design system. Ele permite definir variantes, tamanhos e estilos para atender às necessidades de exibição de texto em diferentes contextos.
 
 ----------
 
@@ -59,21 +59,27 @@ O componente **Typography** aceita as seguintes propriedades:
 
 ### Texto Simples
 
-`<Typography size="sm" variant="primary">
+```tsx
+<EloTypography size="sm" variant="primary">
   Este é um texto simples usando a variante primária e tamanho pequeno.
-</Typography>` 
+</EloTypography> 
+```
 
 ### Título
 
-`<Typography size="title1" element="h1">
+```tsx
+<EloTypography size="title1" element="h1">
   Este é um título de nível 1.
-</Typography>` 
+</EloTypography> 
+```
 
 ### Personalização com Classes
 
-`<Typography className="custom-class" size="md" variant="secondary">
+```tsx
+<EloTypography className="custom-class" size="md" variant="secondary">
   Texto personalizado com classes adicionais.
-</Typography>` 
+</EloTypography> 
+```
 
 ----------
 
@@ -88,10 +94,6 @@ Use a propriedade `className` para adicionar estilos personalizados conforme nec
 
 ## Boas Práticas
 
--   **Escolha o tamanho correto para a hierarquia visual:** Use tamanhos maiores (`title1`, `title2`, etc.) para títulos e tamanhos menores (`xs`, `sm`) para textos auxiliares. Certifique-se de manter a consistência dentro da interface.
-    
--   **Use variantes para reforçar a semântica:** Utilize `primary` para textos importantes, `secondary` para contextos complementares e `tertiary` para informações de menor relevância.
-    
+-   **Escolha o tamanho correto para a hierarquia visual:** Use tamanhos maiores (`title1`, `title2`, etc.) para títulos e tamanhos menores (`xs`, `sm`) para textos auxiliares. Certifique-se de manter a consistência dentro da interface.    
 -   **Selecione o elemento HTML apropriado:** Ajuste a propriedade `element` para garantir que o componente corresponda à semântica do conteúdo (por exemplo, `h1` para títulos principais e `p` para parágrafos).
-
 -   **Acessibilidade:** Sempre considere contraste suficiente entre o texto e o fundo para garantir legibilidade, especialmente para variantes como `tertiary`.
