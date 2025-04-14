@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import Footer, { FooterProps } from './Footer';
+import { Mail, Facebook, Instagram } from "lucide-react";
 
 const meta: Meta<FooterProps> = {
   title: 'Footer',

@@ -2,7 +2,7 @@ import { cva } from "class-variance-authority";
 import classNames from "classnames";
 import { SwitchProps } from "./Switch";
 
-const switchStyle = ({ variant, enabled, disabled, size = "default" }: SwitchProps) => {
+export default ({ variant, enabled, disabled, size = "default" }: SwitchProps) => {
   const containerVariant = cva(
     classNames(
       "outline-none relative inline-flex items-center rounded-full transition-colors duration-200 ease-in-out",
@@ -58,5 +58,3 @@ const switchStyle = ({ variant, enabled, disabled, size = "default" }: SwitchPro
     Container: containerClasses,
   };
 };
-
-export default switchStyle;

@@ -8,7 +8,8 @@ const IconGallery: React.FC<{
   style?: HeroIconStyle;
   size?: number;
   color?: string;
-}> = ({ style = "outline", size = 24, color = "text-icon" }) => {
+  useTokenColor?: boolean;
+}> = ({ style = "outline", size = 24, color = "text-icon", useTokenColor = false }) => {
   return (
     <div className="grid grid-cols-6 gap-4 p-4">
       {iconNames.map((iconName) => (

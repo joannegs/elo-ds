@@ -29,14 +29,14 @@ const EloCheckbox: React.FC<CheckboxProps> = ({ checked = false, disabled, label
       onClick={toggleCheck}
     >
       <div
-        className={`size-5 flex items-center justify-center border-2 rounded-md transition-all 
+        className={`w-5 h-5 flex items-center justify-center border-2 rounded-md transition-all 
                     ${isChecked ? 'bg-primary border-primary' : 'border-gray-300'}
                     ${disabled ? 'bg-gray-200 border-gray-400' : ''}`}
       >
         {isChecked && (
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="size-3 text-white"
+            className="w-3 h-3 text-white"
             viewBox="0 0 20 20"
             fill="currentColor"
           >

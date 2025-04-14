@@ -19,6 +19,7 @@ const textColorClassMap = {
 const EloDivider = ({
   children,
   bgColor = "dark",
+  ...rest
 }: DividerProps) => {
   const colorClass = colorClassMap[bgColor];
   const textColorClasses = classNames(

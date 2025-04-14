@@ -71,7 +71,7 @@ const EloInput = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>(
             flex items-center w-full rounded-md border p-3 gap-2
             ${label ? "pt-5" : ""}
             ${error ? "border-input-error" : "theme-grey"}
-            disabled:bg-disabled disabled:text-gray disabled:border-2
+            disabled:bg-disabled disabled:text-grey disabled:border-2 disabled:border-disabled
           `}
         >
           {iconStart && (

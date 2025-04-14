@@ -11,13 +11,13 @@ export type AvatarProps = {
 } & React.HTMLAttributes<HTMLDivElement>;
 
 const avatarSizeMap = {
-  xs: "size-5",
-  sm: "size-6",
-  md: "size-",
-  lg: "sixe-9",
+  xs: "w-5 h-5",
+  sm: "w-6 h-6",
+  md: "w-8 h-8",
+  lg: "w-9 h-9",
 };
 
-const EloAvatar = ({
+const Avatar = ({
   size = "xs",
   image,
   avatarName,
@@ -65,4 +65,4 @@ const EloAvatar = ({
   );
 };
 
-export default EloAvatar;
+export default Avatar;

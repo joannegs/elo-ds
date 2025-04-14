@@ -1,6 +1,5 @@
 import React from "react";
 import { Mail, Facebook, Instagram } from "lucide-react";
-import Image from 'next/image';
 
 export type FooterProps = {
   logo?: React.ReactNode;
@@ -25,7 +24,7 @@ const EloFooter: React.FC<FooterProps> = ({
       <div className="flex items-center gap-2">{logo}</div>
       <div className="flex items-center gap-4">
         <div className="max-h-[58px]">
-          <Image src="lmts-logo.png" alt="LMTS Logo" className="max-h-[58px]" />
+          <img src="lmts-logo.png" alt="LMTS Logo" className="max-h-[58px]" />
         </div> 
       </div>
       <div className="flex items-center gap-4">

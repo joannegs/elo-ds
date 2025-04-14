@@ -37,7 +37,7 @@ const EloTypography = ({
 }: TypographyProps) => {
   const Element = element as any;
   return (
-    <Element className={`${textVariants(rest)} ${className}`} {...rest}>
+    <Element className={`theme-grey ${textVariants(rest)} ${className}`} {...rest}>
       {children}
     </Element>
   );
