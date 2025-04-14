@@ -12,7 +12,7 @@ const getMultiStepItensClasses = (currentStep: number, step: number, variant: st
   return `${baseClasses} ${stateClass}`;
 };
 
-const MultiStep = ({
+const EloMultiStep = ({
   size,
   currentStep = 1,
   variant = "bar",
@@ -47,4 +47,4 @@ const MultiStep = ({
   );
 };
 
-export default MultiStep;
+export default EloMultiStep;

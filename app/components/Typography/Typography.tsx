@@ -29,7 +29,7 @@ export type TypographyProps = VariantProps<typeof textVariants> & {
   element?: keyof JSX.IntrinsicElements;
 } & JSX.IntrinsicElements["p"];
 
-const Typography = ({
+const EloTypography = ({
   children,
   element = "p",
   className,
@@ -43,4 +43,4 @@ const Typography = ({
   );
 };
 
-export default Typography;
+export default EloTypography;

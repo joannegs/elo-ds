@@ -14,7 +14,7 @@ export type IconContainerProps = {
   color?: string;
 };
 
-const IconContainer: React.FC<IconContainerProps> = ({
+const EloIconContainer: React.FC<IconContainerProps> = ({
   name,
   style = "outline",
   size = 12,
@@ -43,4 +43,4 @@ const IconContainer: React.FC<IconContainerProps> = ({
   );
 };
 
-export default IconContainer;
+export default EloIconContainer;

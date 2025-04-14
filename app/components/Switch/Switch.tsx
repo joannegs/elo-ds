@@ -14,7 +14,7 @@ export type SwitchProps = {
   onChange?: (enabled: boolean) => void;
 } & HeadlessSwitchProps<any>;
 
-const Switch = ({
+const EloSwitch = ({
   defaultEnable: enabledByDefault,
   variant = "default",
   size = "default",
@@ -55,4 +55,4 @@ const Switch = ({
   );
 };
 
-export default Switch;
+export default EloSwitch;

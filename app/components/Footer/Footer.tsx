@@ -14,7 +14,7 @@ export type FooterProps = {
   className?: string;
 };
 
-const Footer: React.FC<FooterProps> = ({
+const EloFooter: React.FC<FooterProps> = ({
   backgroundColor = "footer",
   logo,
   socialLinks,
@@ -49,4 +49,4 @@ const Footer: React.FC<FooterProps> = ({
   );
 };
 
-export default Footer;
+export default EloFooter;

@@ -13,7 +13,7 @@ export type DialogProps = {
   children?: React.ReactNode;
 };
 
-const Dialog = ({
+const EloDialog = ({
   title,
   description,
   onClose,
@@ -46,4 +46,4 @@ const Dialog = ({
   );
 };
 
-export default Dialog;
+export default EloDialog;

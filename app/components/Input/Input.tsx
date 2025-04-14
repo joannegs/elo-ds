@@ -45,7 +45,7 @@ const InputOrTextArea = forwardRef<
 
 InputOrTextArea.displayName = "InputOrTextArea";
 
-const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>(
+const EloInput = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>(
   (
     {
       label,
@@ -110,6 +110,4 @@ const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>(
   }
 );
 
-Input.displayName = "Input";
-
-export default Input;
+export default EloInput;

@@ -8,7 +8,7 @@ export type TextBoxProps = {
   className?: string;
 } & React.HTMLAttributes<HTMLDivElement>;
 
-const TextBox = ({ title, content, className, titleSize, ...rest }: TextBoxProps) => {
+const EloTextBox = ({ title, content, className, titleSize, ...rest }: TextBoxProps) => {
   return (
     <div
       className={`bg-light-surface p-5 rounded-md shadow-md ${className}`}
@@ -31,4 +31,4 @@ const TextBox = ({ title, content, className, titleSize, ...rest }: TextBoxProps
   );
 };
 
-export default TextBox;
+export default EloTextBox;

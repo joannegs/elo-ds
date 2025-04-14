@@ -32,7 +32,7 @@ function getVariant(
   }
 }
 
-const Button = ({
+const EloButton = ({
   variant = 'primary',
   children,
   iconStart,
@@ -74,4 +74,4 @@ const Button = ({
   );
 };
 
-export default Button;
+export default EloButton;

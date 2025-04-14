@@ -11,7 +11,7 @@ export type DropdownProps = {
   multiSelect?: boolean;
 };
 
-const Dropdown: React.FC<DropdownProps> = ({
+const EloDropdown: React.FC<DropdownProps> = ({
   options,
   selectedValues = [],
   onSelectionChange,
@@ -88,4 +88,4 @@ const Dropdown: React.FC<DropdownProps> = ({
   );
 };
 
-export default Dropdown;
+export default EloDropdown;

@@ -5,7 +5,7 @@ export type ProgressIndicatorProps = {
   className?: string;
 } & React.HTMLAttributes<HTMLDivElement>;
 
-export const ProgressIndicator = ({
+export const EloProgressIndicator = ({
   percentage,
   className = "",
 }: ProgressIndicatorProps) => {
@@ -23,4 +23,4 @@ export const ProgressIndicator = ({
   );
 };
 
-export default ProgressIndicator;
+export default EloProgressIndicator;

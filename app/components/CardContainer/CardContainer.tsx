@@ -14,7 +14,7 @@ export type CardContainerProps = {
   children: React.ReactNode;
 };
 
-const CardContainer: React.FC<CardContainerProps> = ({
+const EloCardContainer: React.FC<CardContainerProps> = ({
   hideHover = true,
   className,
   shadow = true,
@@ -52,4 +52,4 @@ const CardContainer: React.FC<CardContainerProps> = ({
   );
 };
 
-export default CardContainer;
+export default EloCardContainer;

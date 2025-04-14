@@ -20,7 +20,7 @@ const boxShadowClassMap = {
   lg: "shadow-lg",
 };
 
-const Box = ({
+const EloBox = ({
   border = true,
   type = "light",
   shadow,
@@ -43,4 +43,4 @@ const Box = ({
   );
 };
 
-export default Box;
+export default EloBox;

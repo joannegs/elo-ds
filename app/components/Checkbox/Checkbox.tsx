@@ -8,7 +8,7 @@ export type CheckboxProps = {
   onChange?: (checked: boolean) => void;
 };
 
-const Checkbox: React.FC<CheckboxProps> = ({ checked = false, disabled, label, className, onChange }) => {
+const EloCheckbox: React.FC<CheckboxProps> = ({ checked = false, disabled, label, className, onChange }) => {
   const [isChecked, setIsChecked] = useState(checked);
 
   useEffect(() => {
@@ -53,4 +53,4 @@ const Checkbox: React.FC<CheckboxProps> = ({ checked = false, disabled, label, c
   );
 };
 
-export default Checkbox;
+export default EloCheckbox;

@@ -8,7 +8,7 @@ export type RadioButtonProps = {
   onSelect?: (selected: boolean) => void;
 };
 
-const RadioButton: React.FC<RadioButtonProps> = ({ selected = false, disabled, label, className, onSelect }) => {
+const EloRadioButton: React.FC<RadioButtonProps> = ({ selected = false, disabled, label, className, onSelect }) => {
   const [isSelected, setIsSelected] = useState(selected);
 
   useEffect(() => {
@@ -42,4 +42,4 @@ const RadioButton: React.FC<RadioButtonProps> = ({ selected = false, disabled, l
   );
 };
 
-export default RadioButton;
+export default EloRadioButton;

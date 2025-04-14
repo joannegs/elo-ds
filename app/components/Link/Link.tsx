@@ -12,7 +12,7 @@ export type LinkProps = {
   iconEnd?: InputIconProps;
 } & React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
-const Link = ({
+const EloLink = ({
   children,
   href,
   disabled,
@@ -71,4 +71,4 @@ const Link = ({
   );
 };
 
-export default Link;
+export default EloLink;

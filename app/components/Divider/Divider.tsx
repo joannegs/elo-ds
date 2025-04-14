@@ -16,7 +16,7 @@ const textColorClassMap = {
   dark: "text-dark-surface",
 }
 
-const Divider = ({
+const EloDivider = ({
   children,
   bgColor = "dark",
 }: DividerProps) => {
@@ -42,4 +42,4 @@ const Divider = ({
   );
 };
 
-export default Divider;
+export default EloDivider;
