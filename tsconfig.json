@@ -5,11 +5,9 @@
     "declaration": true,
     "declarationDir": "dist/types",
     "emitDeclarationOnly": false,
-
     "outDir": "dist",
-    "rootDir": "app",
-
-    "allowJs": true,
+    "rootDir": ".",
+    "allowJs": false,
     "skipLibCheck": true,
     "strict": true,
     "esModuleInterop": true,
@@ -18,19 +16,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
-    "incremental": true,
-
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-
-    "paths": {
-      "@/*": ["./app/*"]
-    }
+    "incremental": true
   },
-  "include": ["app"],
+  "include": ["./components", "./styles", "./index.ts"],
   "exclude": [
     "node_modules",
     "dist",

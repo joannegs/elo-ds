@@ -13,7 +13,7 @@ export type BadgeProps = {
   iconEnd?: InputIconProps;
 } & React.HTMLAttributes<HTMLDivElement>;
 
-const EloBadge = ({
+export const EloBadge = ({
   color = "primary",
   textColor = "text-title",
   shadow,

@@ -1,14 +1,30 @@
 {
   "name": "elo-ds",
-  "version": "1.0.1",
+  "description": "Design System desenvolvido para o LMTS - Ufape",
+  "author": "Joanne Silva/LMTS",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joannegs/elo-ds"
+  },
+  "version": "1.0.0",
   "private": false,
+  "main": "dist/index.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist",
+    "styles"
+  ],
   "scripts": {
     "dev": "next dev",
-    "build": "tsc",
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "release": "npm run build && npm version ${npm_config_version:-patch} && npm publish --access public",
+    "version": "npm version patch",
+    "clean": "rm -rf dist",
+    "build": "npm run clean && tsc",
+    "release:dev": "npm run build && npm pack"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",
