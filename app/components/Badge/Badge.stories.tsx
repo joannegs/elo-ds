@@ -1,7 +1,8 @@
 import { Meta, StoryObj } from "@storybook/react";
-import Badge, { BadgeProps } from "./Badge";
+import { BadgeProps, EloBadge } from "./Badge";
 import { IconName } from "../IconContainer/IconContainer";
 import * as OutlineIcons from "@heroicons/react/24/outline";
+import React from "react";
 
 // Opções de ícones disponíveis (definindo um array com os ícones disponíveis)
 const iconNamesOptions = [undefined, ...Object.keys(OutlineIcons) as IconName[]];
@@ -15,7 +16,7 @@ type BadgeStoryArgs = BadgeProps & {
 
 const meta: Meta<BadgeStoryArgs> = {
   title: "Badge",
-  component: Badge,
+  component: EloBadge,
   argTypes: {
     color: {
       control: { type: "text" },
@@ -72,7 +73,7 @@ const renderBadge = (args: BadgeStoryArgs) => {
     ? { iconName: iconEndName, solid: iconEndSolid }
     : undefined;
 
-  return <Badge {...rest} iconStart={iconStart} iconEnd={iconEnd} />;
+  return <EloBadge {...rest} iconStart={iconStart} iconEnd={iconEnd} />;
 };
 
 export const Primary: StoryObj<BadgeStoryArgs> = {

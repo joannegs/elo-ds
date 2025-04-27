@@ -11,11 +11,13 @@ const config: Config = {
     '^.+\\.(ts|tsx)$': 'ts-jest',
   },
   testPathIgnorePatterns: ['/node_modules/', '/dist/'],
-  coverageDirectory: './coverage',
+  coverageDirectory: './.coverage',
+  collectCoverage: true,
   collectCoverageFrom: [
-    'src/**/*.{ts,tsx}',
-    '!src/**/*.d.ts',
-    '!src/**/index.ts',
+    'app/**/*.{ts,tsx}',
+    '!app/**/*.d.ts',
+    '!app/**/*.stories.tsx',
+    '!app/**/index.ts',
   ],
   testMatch: [
     '**/?(*.)+(spec|test).[tj]s?(x)',
@@ -24,6 +26,11 @@ const config: Config = {
   silent: true,
   noStackTrace: true,
   testResultsProcessor: './node_modules/jest-sonar-reporter',
+  coverageReporters: [
+    'lcov',
+    'json',
+    'html',
+  ],
 };
 
 export default config;

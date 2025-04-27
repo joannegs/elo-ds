@@ -7,7 +7,7 @@ export type BadgeProps = {
   color: string;
   textColor: string;
   tagContent: string;
-  shadow: boolean;
+  shadow?: boolean;
   size: "sm" | "md" | "lg";
   iconStart?: InputIconProps;
   iconEnd?: InputIconProps;
@@ -16,7 +16,7 @@ export type BadgeProps = {
 export const EloBadge = ({
   color = "primary",
   textColor = "text-title",
-  shadow,
+  shadow = false,
   tagContent,
   iconStart,
   iconEnd,
@@ -64,7 +64,8 @@ export const EloBadge = ({
   );
 
   return (
-    <div className={badgeClasses} {...rest}>
+    <div data-testid="elo-badge"
+     className={badgeClasses} {...rest}>
       {iconStart && (
         <IconContainer
           name={iconStart.iconName}
