@@ -65,6 +65,7 @@ const EloButton = ({
           style={iconStart.solid ? 'solid' : 'outline'}
           size={20}
           color="currentColor"
+          aria-label={iconStart.iconName}
         />
       )}
 
@@ -76,6 +77,7 @@ const EloButton = ({
           style={iconEnd.solid ? 'solid' : 'outline'}
           size={20}
           color="currentColor"
+          aria-label={iconEnd.iconName}
         />
       )}
     </button>

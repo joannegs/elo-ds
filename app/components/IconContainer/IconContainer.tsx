@@ -32,14 +32,16 @@ const EloIconContainer: React.FC<IconContainerProps> = ({
   const finalColor = isCustomColor ? color : `text-${color}`;
 
   return (
-    <IconComponent
-      className={`${isCustomColor ? "" : finalColor} ${className}`}
-      style={{
-        width: size,
-        height: size,
-        ...(isCustomColor ? { color: finalColor } : {}),
-      }}
-    />
+    <span aria-label={name}>
+      <IconComponent
+        className={`${isCustomColor ? "" : finalColor} ${className}`}
+        style={{
+          width: size,
+          height: size,
+          ...(isCustomColor ? { color: finalColor } : {}),
+        }}
+      />
+    </span>
   );
 };
 
