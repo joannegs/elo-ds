@@ -1,7 +1,9 @@
 import { Meta, StoryObj } from "@storybook/react";
-import Button, { ButtonProps } from "./Button";
+import EloButton, { ButtonProps } from "./Button";
 import { IconName } from "../IconContainer/IconContainer";
 import * as OutlineIcons from "@heroicons/react/24/outline";
+import React from "react";
+import { EloColorOptions } from './../../../styles/colors';
 
 const iconNamesOptions = [undefined, ...Object.keys(OutlineIcons) as IconName[]];
 
@@ -10,11 +12,13 @@ type ButtonStoryArgs = ButtonProps & {
   iconStartSolid?: boolean;
   iconEndName?: IconName;
   iconEndSolid?: boolean;
+  customBackgroundColor?: string;
+  customTextColor?: string;
 };
 
 const meta: Meta<ButtonStoryArgs> = {
   title: "Button",
-  component: Button,
+  component: EloButton,
   argTypes: {
     children: {
       type: "string",
@@ -22,13 +26,23 @@ const meta: Meta<ButtonStoryArgs> = {
     },
     variant: {
       control: { type: "select" },
-      options: ["primary", "secondary", "tertiary", "error", "alert", "success"],
+      options: [undefined, "primary", "secondary", "tertiary", "error", "alert", "success"],
     },
     disabled: {
       type: "boolean",
     },
     className: {
       type: "string",
+    },
+    customBackgroundColor: {
+      name: "Custom Background Color",
+      control: { type: "select" },
+      options: EloColorOptions,
+    },
+    customTextColor: {
+      name: "Text Color",
+      control: { type: "select" },
+      options: EloColorOptions,
     },
     iconStartName: {
       name: "Icon Start Name",
@@ -56,7 +70,7 @@ const meta: Meta<ButtonStoryArgs> = {
 export default meta;
 
 const renderButton = (args: ButtonStoryArgs) => {
-  const { iconStartName, iconEndName, iconStartSolid, iconEndSolid, ...rest } = args;
+  const { iconStartName, iconEndName, iconStartSolid, iconEndSolid, customBackgroundColor, customTextColor, variant, ...rest } = args;
 
   const iconStart = iconStartName
     ? { iconName: iconStartName, solid: iconStartSolid }
@@ -66,7 +80,16 @@ const renderButton = (args: ButtonStoryArgs) => {
     ? { iconName: iconEndName, solid: iconEndSolid }
     : undefined;
 
-  return <Button {...rest} iconStart={iconStart} iconEnd={iconEnd} />;
+  return (
+    <EloButton
+      {...rest}
+      iconStart={iconStart}
+      iconEnd={iconEnd}
+      customBackgroundColor={customBackgroundColor}
+      customTextColor={customTextColor}
+      variant={variant}
+    />
+  );
 };
 
 export const Primary: StoryObj<ButtonStoryArgs> = {
@@ -107,6 +130,19 @@ export const Danger: StoryObj<ButtonStoryArgs> = {
     variant: "error",
     iconEndName: "ExclamationTriangleIcon",
     iconEndSolid: false,
+  },
+  render: renderButton,
+};
+
+export const CustomColors: StoryObj<ButtonStoryArgs> = {
+  args: {
+    children: "Personalizado",
+    customBackgroundColor: 'primary',
+    customTextColor: 'primary-75',
+    iconStartName: "SparklesIcon",
+    iconStartSolid: false,
+    disabled: false,
+    variant: undefined,
   },
   render: renderButton,
 };

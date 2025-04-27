@@ -8,6 +8,8 @@ export type ButtonProps = {
   variant?: 'primary' | 'secondary' | 'tertiary' | 'error' | 'success' | 'alert';
   iconStart?: InputIconProps;
   iconEnd?: InputIconProps;
+  customBackgroundColor?: string;
+  customTextColor?: string;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 function getVariant(
@@ -18,7 +20,7 @@ function getVariant(
     case 'primary':
       return disabled ? 'bg-disabled text-disabled' : 'bg-primary text-white';
     case 'secondary':
-      return disabled ? 'bg-disabled text-disabled' : 'bg-primary-50 text-primary';
+      return disabled ? 'bg-disabled text-disabled' : 'bg-primary-50 text-primary-500';
     case 'tertiary':
       return disabled ? 'text-disabled' : 'text-primary';
     case 'error':
@@ -28,24 +30,30 @@ function getVariant(
     case 'success':
       return disabled ? 'bg-disabled text-disabled' : 'bg-success text-white';
     default:
-      return disabled ? '' : '';
+      return disabled ? 'bg-disabled text-disabled' : '';
   }
 }
 
 const EloButton = ({
-  variant = 'primary',
+  variant,
   children,
   iconStart,
   iconEnd,
+  customBackgroundColor = 'primary',
+  customTextColor = 'white',
   className,
   disabled,
   ...rest
 }: ButtonProps) => {
+  const backgroundColor = variant ? getVariant(variant, disabled) : `bg-${customBackgroundColor}`;
+  const textColor = variant ? getVariant(variant, disabled) : `text-${customTextColor}`;
+
   return (
     <button
       className={clsx(
         'rounded-md px-6 py-2 flex items-center justify-center gap-2 transition-all',
-        getVariant(variant, disabled),
+        backgroundColor,
+        textColor,
         className
       )}
       disabled={disabled}

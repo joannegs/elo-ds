@@ -2,6 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import IconContainer from "./IconContainer";
 import * as OutlineIcons from "@heroicons/react/24/outline";
 import IconGallery from "./IconContainerGallery";
+import React from "react";
 
 const iconNames = Object.keys(OutlineIcons) as (keyof typeof OutlineIcons)[];
 
@@ -14,7 +15,6 @@ const meta: Meta<typeof IconContainer> = {
     size: { control: "number" },
     className: { control: "text" },
     color: { control: "text" },
-    useTokenColor: { control: "boolean" },
   },
 };
 
@@ -26,7 +26,6 @@ export const Default: StoryObj<typeof IconContainer> = {
     style: "outline",
     size: 32,
     color: "text-green-500",
-    useTokenColor: false,
   },
 };
 
@@ -36,7 +35,6 @@ export const AllIcons = {
       style="outline"
       size={24}
       color="black"
-      useTokenColor={false}
     />
   ),
 };

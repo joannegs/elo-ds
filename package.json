@@ -1,12 +1,12 @@
 {
-  "name": "elo-ds",
+  "name": "elo_ds",
   "description": "Design System desenvolvido para o LMTS - Ufape",
   "author": "Joanne Silva/LMTS",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/joannegs/elo-ds"
   },
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": false,
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
