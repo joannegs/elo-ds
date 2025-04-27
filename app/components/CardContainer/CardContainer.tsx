@@ -39,7 +39,8 @@ const EloCardContainer: React.FC<CardContainerProps> = ({
       };
 
   return (
-    <div className={clsx("flex items-center gap-4 flex-wrap", className)}>
+    <div data-testid="elo-card-container"
+    className={clsx("flex items-center gap-4 flex-wrap", className)}>
       {React.Children.map(children, (child) => (
         <div
           className={clsx(baseClasses, shadowClasses, hoverClasses, borderClasses)}
