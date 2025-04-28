@@ -9,8 +9,12 @@ const config: Config = {
   },
   transform: {
     '^.+\\.(ts|tsx)$': 'ts-jest',
+    '^.+\\.(js|jsx)$': 'babel-jest',
   },
   testPathIgnorePatterns: ['/node_modules/', '/dist/'],
+  transformIgnorePatterns: [
+    "/node_modules/(?!lucide-react)/",
+  ],
   coverageDirectory: './.coverage',
   collectCoverage: true,
   collectCoverageFrom: [

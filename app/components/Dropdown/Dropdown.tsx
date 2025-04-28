@@ -41,7 +41,8 @@ const EloDropdown: React.FC<DropdownProps> = ({
   };
 
   return (
-    <div className={`relative w-64 ${className}`}>
+    <div data-testid="elo-dropdown"
+    className={`relative w-64 ${className}`}>
       <button
         className="w-full flex items-center justify-between bg-gray-100 p-2 rounded-md shadow"
         onClick={() => setIsOpen(!isOpen)}
@@ -67,6 +68,8 @@ const EloDropdown: React.FC<DropdownProps> = ({
                 key={option.value}
                 onClick={() => handleSelect(option.value)}
                 className="flex items-center p-2 cursor-pointer hover:bg-gray-100"
+                id={`option-${option.value}`}
+                data-testid={`option-${option.value}`}
               >
                 {multiSelect && (
                   <Checkbox
