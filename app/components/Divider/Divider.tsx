@@ -4,6 +4,7 @@ import classNames from "classnames";
 export type DividerProps = {
   bgColor?: "light" | "dark";
   children?: React.ReactNode;
+  className?: string;
 } & React.HTMLAttributes<HTMLDivElement>;
 
 const colorClassMap = {
@@ -19,7 +20,7 @@ const textColorClassMap = {
 const EloDivider = ({
   children,
   bgColor = "dark",
-  ...rest
+  className,
 }: DividerProps) => {
   const colorClass = colorClassMap[bgColor];
   const textColorClasses = classNames(
@@ -35,7 +36,8 @@ const EloDivider = ({
   );
 
   return (
-    <div className={classNames("flex items-center justify-center")}>
+    <div data-testid="elo-divider" 
+      className={classNames(`flex items-center justify-center ${className}`)}>
       <div className={barClass}></div>
       {children && <div className={textColorClasses}>{children}</div>}
       <div className={barClass}></div>
