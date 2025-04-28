@@ -4,7 +4,7 @@ export type HeaderProps = {
   logo?: React.ReactNode;
   navigation?: React.ReactNode;
   className?: string;
-  backgroundColor: string;
+  backgroundColor?: string;
 };
 
 const EloHeader: React.FC<HeaderProps> = ({ logo, navigation, className, backgroundColor = '' }) => {
