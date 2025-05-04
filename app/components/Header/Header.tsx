@@ -9,7 +9,8 @@ export type HeaderProps = {
 
 const EloHeader: React.FC<HeaderProps> = ({ logo, navigation, className, backgroundColor = '' }) => {
   return (
-    <header className={`bg-${backgroundColor} shadow-md py-4 px-10 flex justify-between items-center ${className}`}>
+    <header data-testid="elo-header"
+      className={`bg-${backgroundColor} shadow-md py-4 px-10 flex justify-between items-center ${className}`}>
       <div className="flex items-center gap-2">{logo}</div>
       <nav className="flex items-center gap-6">{navigation}</nav>
     </header>

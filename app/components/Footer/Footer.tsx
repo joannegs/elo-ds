@@ -20,7 +20,8 @@ const EloFooter: React.FC<FooterProps> = ({
   className,
 }) => {
   return (
-    <footer className={`bg-${backgroundColor} text-white py-4 px-6 flex justify-between items-center ${className}`}>
+    <footer data-testid="elo-footer"
+      className={`bg-${backgroundColor} text-white py-4 px-6 flex justify-between items-center ${className}`}>
       <div className="flex items-center gap-2">{logo}</div>
       <div className="flex items-center gap-4">
         <div className="max-h-[58px]">
