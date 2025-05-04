@@ -29,13 +29,14 @@ const EloRadioGroup: React.FC<RadioGroupProps> = ({ options, value, name, classN
   };
 
   return (
-    <div className={`flex flex-col gap-2 ${className}`}>
+    <div data-testid="elo-radio-group"
+    className={`flex flex-col gap-2 ${className}`}>
       {options.map((option) => {
         const isSelected = selectedValue === option.value;
         const isDisabled = option.disabled;
 
         return (
-          <div
+          <div data-testid="elo-radio-option"
             key={option.value}
             className={`flex items-center gap-3 cursor-pointer select-none 
               ${isDisabled ? "opacity-50 cursor-not-allowed" : ""}`}

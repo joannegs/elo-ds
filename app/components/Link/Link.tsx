@@ -31,7 +31,7 @@ const EloLink = ({
   const iconSize = getComputedStyle(document.documentElement).getPropertyValue(`--icon-${size}`).trim();
 
   return (
-    <div
+    <div data-testid="elo-link"
       className={`
         flex 
         ${disabled ? "cursor-not-allowed" : "cursor-pointer"} 

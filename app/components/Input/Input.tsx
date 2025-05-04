@@ -36,7 +36,7 @@ const InputOrTextArea = forwardRef<
   }
 
   return (
-    <input
+    <input data-testid="elo-input"
       ref={ref as React.Ref<HTMLInputElement>}
       {...(props as React.InputHTMLAttributes<HTMLInputElement>)}
     />

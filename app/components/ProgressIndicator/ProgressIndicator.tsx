@@ -8,10 +8,12 @@ export type ProgressIndicatorProps = {
 export const EloProgressIndicator = ({
   percentage,
   className = "",
+  ...rest
 }: ProgressIndicatorProps) => {
   return (
-    <div
+    <div data-testid="elo-progress-indicator"
       className={`bg-disabled rounded w-full h-1 overflow-hidden ${className}`}
+      {...rest}
     >
       <div
         className="bg-primary h-full transition-all duration-300"

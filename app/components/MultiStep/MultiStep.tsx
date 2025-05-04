@@ -22,7 +22,7 @@ const EloMultiStep = ({
   const MultiStepContainerClasses = variant === "dot" ? "flex items-center justify-center" : "";
 
   return (
-    <div
+    <div data-testid="elo-multi-step"
       className={`${
         MultiStepContainerClasses
       } ${className}`}
@@ -37,6 +37,7 @@ const EloMultiStep = ({
         {Array.from({ length: size }, (_, i) => i + 1).map((step) => (
           <div
             key={step}
+            data-testid="elo-multi-step-item"
             className={`${
               getMultiStepItensClasses(currentStep, step, variant)
             }`}
