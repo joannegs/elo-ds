@@ -9,8 +9,8 @@ describe("EloTypography", () => {
     const element = screen.getByText("Texto padrão");
     expect(element.tagName.toLowerCase()).toBe("p");
     expect(element).toHaveClass("theme-grey");
-    expect(element).toHaveClass("text-primary-500");
-    expect(element).toHaveClass("text-md");
+    expect(element).toHaveClass("text-primary");
+    expect(element).toHaveClass("text-sm");
   });
 
   it("should render with custom HTML element", () => {

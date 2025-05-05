@@ -23,7 +23,7 @@ const EloSwitch = ({
   ...rest
 }: SwitchProps) => {
   const [enabled, setEnabled] = useState(enabledByDefault);
-  const style = useStyle({ variant, enabled, disabled, size });
+  const style = useStyle({ variant, enabled, disabled: !!disabled, size });
 
   const toggle = () => {
     const newState = !enabled;

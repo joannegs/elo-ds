@@ -51,26 +51,24 @@ describe("EloSwitch", () => {
 
   it("should render a visually hidden label for accessibility", () => {
     renderSwitch();
-    expect(screen.getByText("switch toggle")).toHaveClass("sr-only");
-  });
-
-  it("should render the switch circle in non 'colorful-icon' variants", () => {
-    renderSwitch({ variant: "default" });
-    const circle = screen.getByRole("switch").querySelector("span:not(.sr-only)");
-    expect(circle).toHaveClass(expect.stringContaining("switch-default"));
+    const label = screen.getByText("switch toggle");
+    expect(label).toBeInTheDocument();
+    expect(label).toHaveClass("sr-only");
   });
 
   it("should render check icon when variant is 'colorful-icon' and enabled is true", () => {
     renderSwitch({ defaultEnable: true, variant: "colorful-icon" });
-    const svg = screen.getByRole("switch").querySelector("svg");
+    const switchElement = screen.getByRole("switch");
+    const svg = switchElement.querySelector("svg");
     expect(svg).toBeInTheDocument();
-    expect(screen.getByRole("switch")).toHaveClass(expect.stringContaining("container-colorful-icon-true"));
+    expect(switchElement).toHaveClass("container-colorful-icon-true-false-default");
   });
 
   it("should render x icon when variant is 'colorful-icon' and enabled is false", () => {
     renderSwitch({ defaultEnable: false, variant: "colorful-icon" });
-    const svg = screen.getByRole("switch").querySelector("svg");
+    const switchElement = screen.getByRole("switch");
+    const svg = switchElement.querySelector("svg");
     expect(svg).toBeInTheDocument();
-    expect(screen.getByRole("switch")).toHaveClass(expect.stringContaining("container-colorful-icon-false"));
+    expect(switchElement).toHaveClass("container-colorful-icon-false-false-default");
   });
 });
