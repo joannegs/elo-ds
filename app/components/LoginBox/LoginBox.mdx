@@ -1,0 +1,186 @@
+
+# LoginBox
+
+O componente **LoginBox** é utilizado para criar uma interface de autenticação com campos para e-mail e senha, opção de lembrar o usuário, link para recuperação de senha e botões para login e cadastro. É ideal para páginas de login em aplicações web.
+
+----------
+
+## Propriedades (Props)
+
+O componente **LoginBox** aceita as seguintes propriedades:
+
+### `title`
+
+- **Tipo:** `string` (opcional)  
+- **Descrição:** Texto exibido como título no topo da caixa.  
+- **Padrão:** `"Entrar"`
+
+### `emailLabel`
+
+- **Tipo:** `string` (opcional)  
+- **Descrição:** Label do campo de e-mail.  
+- **Padrão:** `"E-mail:"`
+
+### `passwordLabel`
+
+- **Tipo:** `string` (opcional)  
+- **Descrição:** Label do campo de senha.  
+- **Padrão:** `"Senha:"`
+
+### `emailPlaceholder`
+
+- **Tipo:** `string` (opcional)  
+- **Descrição:** Placeholder do campo de e-mail.  
+- **Padrão:** `"Digite seu e-mail"`
+
+### `passwordPlaceholder`
+
+- **Tipo:** `string` (opcional)  
+- **Descrição:** Placeholder do campo de senha.  
+- **Padrão:** `"Digite sua senha"`
+
+### `rememberMeLabel`
+
+- **Tipo:** `string` (opcional)  
+- **Descrição:** Texto ao lado do checkbox para lembrar o usuário.  
+- **Padrão:** `"Lembre-se de mim"`
+
+### `forgotPasswordText`
+
+- **Tipo:** `string` (opcional)  
+- **Descrição:** Texto do link de recuperação de senha.  
+- **Padrão:** `"Esqueceu sua senha?"`
+
+### `forgotPasswordLink`
+
+- **Tipo:** `string` (opcional)  
+- **Descrição:** URL do link para recuperação de senha.  
+- **Padrão:** `"#"`
+
+### `loginButtonLabel`
+
+- **Tipo:** `string` (opcional)  
+- **Descrição:** Texto do botão de login.  
+- **Padrão:** `"Entrar"`
+
+### `registerButtonLabel`
+
+- **Tipo:** `string` (opcional)  
+- **Descrição:** Texto do botão de cadastro.  
+- **Padrão:** `"Cadastrar"`
+
+### `onLogin`
+
+- **Tipo:** `(email: string, password: string, rememberMe: boolean) => void` (opcional)  
+- **Descrição:** Função chamada ao clicar no botão de login, recebendo e-mail, senha e o estado do checkbox de lembrar.
+
+### `onRegister`
+
+- **Tipo:** `() => void` (opcional)  
+- **Descrição:** Função chamada ao clicar no botão de cadastro.
+
+### `showRegisterButton`
+
+- **Tipo:** `boolean` (opcional)  
+- **Descrição:** Controla se o botão de cadastro é exibido.  
+- **Padrão:** `true`
+
+### `fixedWidth`
+
+- **Tipo:** `number` (opcional)  
+- **Descrição:** Define a largura fixa do container em pixels.  
+- **Padrão:** `320`
+
+### `fixedHeight`
+
+- **Tipo:** `number` (opcional)  
+- **Descrição:** Define a altura fixa do container em pixels.  
+- **Padrão:** `500`
+
+### `theme`
+- **Tipo:**: `"grey" | "blue" | "violet" | "yellow" | "orange" | "green" | "red"` (opcional)
+
+- **Descrição:**: Define a aparência dos botões, do checkbox e do link, alterando o tema visual do componente.
+
+## Exemplo de Uso
+
+### Exemplo básico (component controlado)
+
+```tsx
+import React, { useState } from "react";
+import EloLoginBox from "./EloLoginBox";
+
+function LoginPage() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [rememberMe, setRememberMe] = useState(false);
+
+  const emailError = email && !/\S+@\S+\.\S+/.test(email) ? { message: "E-mail inválido" } : undefined;
+  const passwordError = password && password.length < 6 ? { message: "Senha muito curta" } : undefined;
+
+  const handleLogin = () => {
+    if (!emailError && !passwordError) {
+      alert(`Login:\nEmail: ${email}\nSenha: ${password}\nLembrar: ${rememberMe}`);
+    } else {
+      alert("Corrija os erros antes de entrar.");
+    }
+  };
+
+  return (
+    <EloLoginBox
+      email={email}
+      password={password}
+      rememberMe={rememberMe}
+      onEmailChange={setEmail}
+      onPasswordChange={setPassword}
+      onRememberMeChange={setRememberMe}
+      emailError={emailError}
+      passwordError={passwordError}
+      onLogin={handleLogin}
+    />
+  );
+}
+```
+
+### Uso com textos personalizados e callbacks
+
+```tsx
+<EloLoginBox
+  title="Acesse sua conta"
+  emailLabel="Seu e-mail"
+  passwordLabel="Sua senha"
+  rememberMeLabel="Continuar conectado"
+  forgotPasswordText="Não lembra a senha?"
+  forgotPasswordLink="/recuperar-senha"
+  loginButtonLabel="Entrar"
+  registerButtonLabel="Criar nova conta"
+  showRegisterButton={true}
+  fixedWidth={400}
+  fixedHeight={520}
+  email={email}
+  password={password}
+  rememberMe={rememberMe}
+  onEmailChange={setEmail}
+  onPasswordChange={setPassword}
+  onRememberMeChange={setRememberMe}
+  emailError={emailError}
+  passwordError={passwordError}
+  onLogin={handleLogin}
+  onRegister={() => alert("Registrar novo usuário")}
+/>
+```
+
+### Somente login, sem botão de cadastro
+
+```tsx
+<EloLoginBox
+  showRegisterButton={false}
+  email={email}
+  password={password}
+  rememberMe={rememberMe}
+  onEmailChange={setEmail}
+  onPasswordChange={setPassword}
+  onRememberMeChange={setRememberMe}
+  onLogin={handleLogin}
+/>
+```

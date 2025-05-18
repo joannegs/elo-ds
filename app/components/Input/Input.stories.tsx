@@ -2,6 +2,8 @@ import { Meta, StoryObj } from '@storybook/react';
 import Input, { InputProps } from './Input';
 import { IconName } from '../IconContainer/IconContainer';
 import * as OutlineIcons from '@heroicons/react/24/outline';
+import EloInput from './Input';
+import React from 'react';
 
 const iconNamesOptions = [...Object.keys(OutlineIcons) as string[], 'None'];
 
@@ -53,7 +55,7 @@ export default meta;
 
 const renderInput = (args: InputStoryArgs) => {
   return (
-    <Input
+    <EloInput
       {...args}
       iconStart={
         args.iconStartName

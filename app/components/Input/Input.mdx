@@ -38,6 +38,44 @@ O componente **Input** aceita as seguintes propriedades:
 -   **Descrição:** Define se o campo está desabilitado.
 -   **Padrão:** `false`
 
+### `error`
+
+-   **Tipo:** `{ message: string }` (opcional)
+-   **Descrição:** Objeto que define o estado de erro do campo e exibe uma mensagem abaixo do input.
+-   **Comportamento:** 
+  - Adiciona borda vermelha ao campo (border-input-error)
+  - Exibe a mensagem de erro logo abaixo do campo
+
+  ```tsx
+  <EloInput
+  label="Email"
+  placeholder="Digite seu email"
+  error={{ message: "E-mail inválido" }}
+  showError=true
+  />
+  ```
+
+  ```tsx 
+  const FormComponent = () => {
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState<string | null>(null);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+    setError(e.target.value.includes("@") ? null : "E-mail inválido");
+  };
+
+  return (
+    <EloInput
+      label="E-mail"
+      value={email}
+      onChange={handleChange}
+      error={error ? { message: error } : undefined}
+    />
+  );
+};
+  ```
+
 ### `onChange`
 
 -   **Tipo:** `(event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void` (opcional)

@@ -1,0 +1,7 @@
+**/*.test.tsx
+**/*.test.ts
+**/*.test.js
+**/*.test.jsx
+**/__tests__/**
+**/*.stories.tsx
+**/*.stories.ts

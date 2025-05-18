@@ -19,7 +19,7 @@
     "incremental": true,
     "types": ["jest", "@testing-library/jest-dom"],
   },
-  "include": ["./components", "./styles", "./index.ts"],
+  "include": ["./components", "./styles", "./validators", "./index.ts"],
   "exclude": [
     "node_modules",
     "dist",

@@ -9,12 +9,11 @@ export type RadioOption = {
 export type RadioGroupProps = {
   options: RadioOption[];
   value?: string;
-  name?: string;
   className?: string;
   onChange?: (value: string) => void;
 };
 
-const EloRadioGroup: React.FC<RadioGroupProps> = ({ options, value, name, className, onChange }) => {
+const EloRadioGroup: React.FC<RadioGroupProps> = ({ options, value, className, onChange }) => {
   const [selectedValue, setSelectedValue] = useState(value);
 
   useEffect(() => {

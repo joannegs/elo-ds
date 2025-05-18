@@ -1,0 +1,92 @@
+
+# EloInput com Validators
+
+Este documento explica como utilizar validadores personalizados com o componente `EloInput`. 
+
+## Por que usar validadores?
+
+Validadores permitem garantir que o valor digitado pelo usuário siga regras específicas, como:
+
+- Campo obrigatório
+- Formato de e-mail válido
+- CPF válido
+- Senha forte
+- Etc.
+
+---
+
+## Como usar os Validators com EloInput
+
+O componente `EloInput` por si só não tem a lógica de validação embutida. Para aplicar validadores, o ideal é controlar o estado do valor e do erro externamente e passar a mensagem de erro para a prop `error`.
+
+### Exemplo básico de uso com validadores
+
+```tsx
+import React, { useState, ChangeEvent } from 'react';
+import EloInput from './EloInput';
+import { validateRequired, validateEmail } from '../validators';
+
+const validators = [validateRequired, validateEmail];
+
+const MyValidatedInput = () => {
+  const [value, setValue] = useState('');
+  const [error, setError] = useState<string | null>(null);
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const val = e.target.value;
+    setValue(val);
+
+    for (const validate of validators) {
+      const validationResult = validate(val);
+      if (validationResult) {
+        setError(validationResult);
+        return;
+      }
+    }
+    setError(null);
+  };
+
+  return (
+    <EloInput
+      label="E-mail"
+      placeholder="Digite seu e-mail"
+      value={value}
+      onChange={handleChange}
+      error={error ? { message: error } : undefined}
+      required
+    />
+  );
+};
+```
+
+---
+
+## Validadores disponíveis
+
+Aqui estão alguns validadores prontos que o elo-DS disponibiliza:
+
+| Validador          | Descrição                            |
+| ------------------ | ---------------------------------- |
+| `validateRequired` | Verifica se o campo não está vazio |
+| `validateEmail`    | Valida formato de e-mail           |
+| `validatePhone`    | Valida formato de telefone          |
+| `validateCPF`      | Valida CPF brasileiro              |
+| `validateUfapeEmail` | Valida e-mail institucional UFAPE |
+| `validatePassword` | Verifica requisitos de senha forte |
+| `validateUrl`      | Valida URLs                       |
+
+---
+
+## Implementação recomendada
+
+Para usar seues próprios validadores em inputs elo-DS:
+
+1. Controlar localmente o estado do valor do input e a mensagem de erro
+3. Executar os validadores a cada mudança de valor
+4. Passar a mensagem de erro para a prop `error` do `EloInput`
+
+---
+
+## OBS.:
+
+- A validação pode ser feita tanto onChange quanto onBlur, dependendo da UX desejada.

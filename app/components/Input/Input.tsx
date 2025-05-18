@@ -110,4 +110,6 @@ const EloInput = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>(
   }
 );
 
+EloInput.displayName = "EloInput";
+
 export default EloInput;

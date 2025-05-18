@@ -5,6 +5,7 @@ const config: StorybookConfig = {
     "../app/components/**/*.mdx",
     "../app/components/**/*.stories.@(js|jsx|mjs|ts|tsx)",
     "../app/tokens/**/*.mdx",
+    "../app/validators/**/*.mdx",
     "../app/tokens/**/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
   addons: [

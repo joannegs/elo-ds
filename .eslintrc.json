@@ -3,5 +3,16 @@
     "next/core-web-vitals",
     "next/typescript",
     "plugin:storybook/recommended"
+  ],
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "warn"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.stories.@(js|jsx|ts|tsx)"],
+      "rules": {
+        "storybook/story-exports": "off"
+      }
+    }
   ]
 }
