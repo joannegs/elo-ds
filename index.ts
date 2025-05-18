@@ -18,4 +18,16 @@ export { default as EloSwitch } from "./app/components/Switch/Switch";
 export { default as EloTextBox } from "./app/components/TextBox/TextBox";
 export { default as EloTypography } from "./app/components/Typography/Typography";
 
+export { 
+  validateRequired,
+  validateEmail,
+  validatePhone,
+  validateCPF,
+  validateUfapeEmail,
+  validatePassword,
+  validateUrl,
+  validateMatch
+} from './app/validators/validators';
+
+
 export { EloTailwindBaseConfig as EloTailwindBaseConfig } from "./styles/tailwind.base.config";

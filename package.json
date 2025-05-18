@@ -6,7 +6,7 @@
     "type": "git",
     "url": "git+https://github.com/joannegs/elo-ds"
   },
-  "version": "2.0.0",
+  "version": "2.1.0",
   "private": false,
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
@@ -22,7 +22,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "prepare": "husky",
-    "release": "npm run build && npm version ${npm_config_version:-patch} && npm publish --access public",
+    "release": "npm run build && npm publish --access public",
     "version": "npm version patch",
     "clean": "rm -rf dist",
     "build": "npm run clean && tsc",
