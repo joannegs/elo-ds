@@ -5,3 +5,5 @@
 **/__tests__/**
 **/*.stories.tsx
 **/*.stories.ts
+.dist
+dist
