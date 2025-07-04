@@ -17,3 +17,4 @@ export { default as EloRadioGroup } from "./components/RadioGroup/RadioGroup";
 export { default as EloSwitch } from "./components/Switch/Switch";
 export { default as EloTextBox } from "./components/TextBox/TextBox";
 export { default as EloTypography } from "./components/Typography/Typography";
+export { default as EloLoginBox } from "./components/LoginBox/LoginBox";

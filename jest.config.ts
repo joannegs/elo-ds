@@ -17,14 +17,14 @@ const config: Config = {
   ],
   coverageDirectory: './.coverage',
   collectCoverage: true,
-/*   coverageThreshold: {
+  coverageThreshold: {
     global: {
       branches: 80,
       functions: 85,
       lines: 90,
       statements: 90
     }
-  }, */
+  },
   collectCoverageFrom: [
     'app/**/*.{ts,tsx}',
     '!app/**/*.d.ts',
